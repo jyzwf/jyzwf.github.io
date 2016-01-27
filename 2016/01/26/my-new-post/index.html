@@ -18,9 +18,11 @@
     <meta property="og:image" content="undefined"/>
   
 
-  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link href="/imgs/favicon.ico" rel="icon" type="image/x-ico">
   <link rel="alternate" href="/atom.xml" title="Fecho&#39;s blog" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+   <link rel="stylesheet" href="/css/private_style.css" media="screen" type="text/css">
+
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 
@@ -28,21 +30,21 @@
 
 
 <body>
-  <header id="header" class="inner"><div class="alignleft">
+  <header id="header" class="inner"><div class="head">
   <h1><a href="/">Fecho&#39;s blog</a></h1>
   <h2><a href="/">day day up</a></h2>
 </div>
-<nav id="main-nav" class="alignright">
+<nav id="main-nav">
   <ul>
     
       <li><a href="/">Home</a></li>
     
-      <li><a href="/archives">Archives</a></li>
+      <li><a href="/archives">归档</a></li>
     
       <li><a href="//about">关于</a></li>
     
       <li> <a href="/atom.xml">RSS</a></li>
-      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+      <li> <a title="嗨起来" href='javascript:(function() {
 	function c() {
 		var e = document.createElement("link");
 		e.setAttribute("type", "text/css");
@@ -203,7 +205,9 @@
   <div class="post-content">
     <header>
       
-        <div class="icon"></div>
+        <div class='myicon'>
+           <img src="/imgs/myicon.png" width="35" height="35">
+        </div>
         <time datetime="2016-01-26T15:53:00.000Z"><a href="/2016/01/26/my-new-post/">2016-01-26</a></time>
       
       
@@ -226,11 +230,6 @@
   </div>
 
         
-  
-  <div class="tags">
-    <a href="/tags/博客，文章/">博客，文章</a>
-  </div>
-
         
   <div class="addthis addthis_toolbox addthis_default_style">
     
@@ -259,15 +258,15 @@
 
 <nav id="pagination" >
     
+    <a href="/2016/01/27/css3-折角效果/" class="alignleft prev" >上一页</a>
     
-    <a href="/2016/01/26/hello-world/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>
 
 <section id="comment">
 <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+  <div class="ds-thread" data-thread-key="/2016/01/26/my-new-post/" data-title="my new post" data-url="http://baidu.com/2016/01/26/my-new-post/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -298,6 +297,8 @@ var duoshuoQuery = {short_name:"fcho"};
   <h3 class="title">分类</h3>
   <ul class="entry">
   
+    <li><a href="/categories/CSS3/">CSS3</a><small>1</small></li>
+  
     <li><a href="/categories/blog/">blog</a><small>1</small></li>
   
   </ul>
@@ -305,24 +306,17 @@ var duoshuoQuery = {short_name:"fcho"};
 
 
   
-<div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
-  <div class="entry">
-    <a href="/tags/博客，文章/" style="font-size: 10px;">博客，文章</a>
-  </div>
-</div>
-
 
   <div class="widget tag">
 <h3 class="title">友情链接</h3>
 <ul class="entry">
-<li><a href="http://jyzwf.github.io/" title="jyzwf's Blog">jyzwf</a></li>
+<li><a href="http://user.qzone.qq.com/1327409246/infocenter?ptsig=-Q7uC2*JzNCAq9-ZXQ7W-xzDstEKgxtHWm8x1Dyirdk_" title="jyzwf's Blog">qq空间</a></li>
 </ul>
 </div>
 </aside>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
+  <footer id="footer" class="inner"><div>
   
   &copy; 2016 jyzwf
   
@@ -342,6 +336,11 @@ var duoshuoQuery = {short_name:"fcho"};
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/imgs/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
 
 
   <a href="https://github.com/jyzwf"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
