@@ -11,7 +11,7 @@
 }
 body {
   background: #eee;
-  color: #6cf;
+  color: #444;
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   font-size: 14px;
   text-shadow: 0 0 1px transparent;
@@ -45,7 +45,7 @@ h3 {
 }
 a {
   text-decoration: none;
-  color: #258fb8;
+  color: #6cf;
 }
 a:hover {
   text-decoration: underline;
@@ -109,7 +109,7 @@ a:hover {
   color: #999;
 }
 #header a:hover {
-  color: #258fb8;
+  color: #6cf;
   text-decoration: none;
 }
 #header h1 {
@@ -170,6 +170,58 @@ article .post-content {
   article .post-content {
     padding-left: 20px;
   }
+}
+article .post-content:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  height: 20%;
+  -webkit-box-shadow: 0 15px 10px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0 15px 10px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 0 15px 15px rgba(0,0,0,0.7);
+  box-shadow: 0 15px 15px rgba(0,0,0,0.7);
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+article .post-content:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  height: 20%;
+  -webkit-box-shadow: 0 15px 10px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0 15px 10px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 0 15px 15px rgba(0,0,0,0.7);
+  box-shadow: 0 15px 15px rgba(0,0,0,0.7);
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  right: 10px;
+  left: auto;
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
 }
 article .gallery {
   overflow: hidden;
@@ -241,7 +293,7 @@ article header .icon {
   position: absolute;
   top: 20px;
   left: 20px;
-  color: #258fb8;
+  color: #6cf;
 }
 @media screen and (max-width: 600px) {
   article header .icon {
@@ -267,10 +319,10 @@ article header .title {
   font-weight: normal;
 }
 article header .title a {
-  color: #6cf;
+  color: #444;
 }
 article header .title a:hover {
-  color: #258fb8;
+  color: #6cf;
   text-decoration: none;
 }
 article .entry {
@@ -437,7 +489,7 @@ article footer a {
   color: #999;
 }
 article footer a:hover {
-  color: #258fb8;
+  color: #6cf;
   text-decoration: none;
 }
 article footer a:before {
@@ -499,7 +551,7 @@ article footer .addthis iframe {
   margin-bottom: 50px;
 }
 #pagination a:hover {
-  background: #258fb8;
+  background: #6cf;
   color: #fff;
   text-decoration: none;
   text-shadow: none;
@@ -605,7 +657,7 @@ article footer .addthis iframe {
   color: #999;
 }
 #sidebar .search input:focus {
-  color: #6cf;
+  color: #444;
 }
 #sidebar .tag small {
   margin-left: 15px;
@@ -679,10 +731,10 @@ article footer .addthis iframe {
   font-size: 100%;
 }
 .entry .gist .gist-file .gist-meta a {
-  color: #258fb8;
+  color: #6cf;
 }
 .entry .gist .gist-file .gist-meta a:visited {
-  color: #258fb8;
+  color: #6cf;
 }
 figure.highlight {
   background: #eee;
