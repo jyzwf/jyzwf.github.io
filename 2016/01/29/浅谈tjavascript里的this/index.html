@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>浅谈tjavascript里的this | Fecho&#39;s blog</title>
+  <title>浅谈javascript里的this | Fecho&#39;s blog</title>
   <meta name="author" content="jyzwf">
   
   <meta name="description" content="day day up">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="浅谈tjavascript里的this"/>
+  <meta property="og:title" content="浅谈javascript里的this"/>
   <meta property="og:site_name" content="Fecho&#39;s blog"/>
 
   
@@ -212,7 +212,7 @@
       
       
   
-    <h1 class="title">浅谈tjavascript里的this</h1>
+    <h1 class="title">浅谈javascript里的this</h1>
   
 
     </header>
@@ -225,6 +225,12 @@
 <blockquote>
 <p>注：在ECMAScript5的strict模式下，作为普通函数被调用时，this指向的是<code>undefined</code>，而非window!<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="pi">	"use strict"</span></span><br><span class="line">	alert(<span class="keyword">this</span>);   <span class="comment">//undefined</span></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<p><strong>3. 构造器作用</strong><br>在JS中大部分函数都可以被作为构造器使用，当用new来调用函数时，该函数总是会返回一个对象，通常情况下，构造器里的this就指向返回的这个对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">'zhu'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> MyName;</span><br><span class="line">alert(obj.name)  <span class="comment">//zhu</span></span><br></pre></td></tr></table></figure></p>
+<p>但如果构造器显式的返回一个对象，那么此次运算最终会返回这个对象，而非this：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">'zhu'</span>;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		name : <span class="string">'wang'</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> MyName;</span><br><span class="line"><span class="built_in">console</span>.log( obj.name );   <span class="comment">//wang</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>4. Function.prototype.call或Function.prototype.apply调用：</strong><br>总的来说就是通过<code>call</code>或<code>apply</code>来改变函数中this的指向<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">	name : <span class="string">'zhu'</span>,</span><br><span class="line">	getName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">	name : <span class="string">'wang'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log( obj1.getName() );		<span class="comment">//zhu</span></span><br><span class="line"><span class="built_in">console</span>.log( obj1.getName.apply( obj2 ));   <span class="comment">//wang</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>5. 此外我们往往会遇到我们期待this指向的是这个对象，而实际它指向的却是另一个我们意料之外的对象。。。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.name = <span class="string">'wang'</span>;	</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	name : <span class="string">'zhu'</span>,</span><br><span class="line">	getName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj.getName() )	<span class="comment">//zhu</span></span><br><span class="line"><span class="keyword">var</span> obj2 = obj.getName;</span><br><span class="line"><span class="built_in">console</span>.log( obj2() )		<span class="comment">//wang</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的obj.getName是作为对象的方法来调用的，而后面<code>obj2 = obj.getName</code>只是把obj的getName函数赋值给obj2，然后obj2被调用，此时它只是一个普通函数，其中的this指向的是<code>window</code>!</p>
+<p>最后我们可以考虑下下面这两段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*下面一段输出正常*/</span></span><br><span class="line">	<span class="built_in">document</span>.getElementById = (<span class="function"><span class="keyword">function</span>(<span class="params">fun</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> fun.apply(<span class="built_in">document</span>,<span class="built_in">arguments</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)(<span class="built_in">document</span>.getElementById);</span><br><span class="line">	<span class="keyword">var</span> getId = <span class="built_in">document</span>.getElementById;</span><br><span class="line">	<span class="keyword">var</span> div = getId( <span class="string">'div1'</span> );</span><br><span class="line">	alert( div );</span><br><span class="line"></span><br><span class="line"><span class="comment">/*下面的会报错*/</span></span><br><span class="line">	<span class="keyword">var</span> getId = <span class="built_in">document</span>.getElementById;</span><br><span class="line">	alert( getId( <span class="string">'div1'</span> ) );</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -278,7 +284,7 @@
 
 <section id="comment">
 <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="/2016/01/29/浅谈tjavascript里的this/" data-title="浅谈tjavascript里的this" data-url="http://baidu.com/2016/01/29/浅谈tjavascript里的this/"></div>
+  <div class="ds-thread" data-thread-key="/2016/01/29/浅谈tjavascript里的this/" data-title="浅谈javascript里的this" data-url="http://baidu.com/2016/01/29/浅谈tjavascript里的this/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">

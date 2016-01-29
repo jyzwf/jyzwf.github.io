@@ -45,10 +45,10 @@ h3 {
 }
 a {
   text-decoration: none;
-  color: #6cf;
+  color: #0085ff;
 }
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .alignleft {
   float: left;
@@ -115,7 +115,7 @@ a:hover {
   font-weight: bold;
 }
 #header a:hover {
-  color: #6cf;
+  color: #0085ff;
   text-decoration: none;
   opacity: 1;
   -ms-filter: none;
@@ -317,7 +317,7 @@ article header .icon {
   position: absolute;
   top: 20px;
   left: 20px;
-  color: #6cf;
+  color: #0085ff;
 }
 @media screen and (max-width: 600px) {
   article header .icon {
@@ -339,6 +339,9 @@ article header time {
   display: block;
   line-height: 1;
 }
+article header time a:hover {
+  color: #000;
+}
 article header .title {
   font-weight: bold;
 }
@@ -346,7 +349,7 @@ article header .title a {
   color: #444;
 }
 article header .title a:hover {
-  color: #6cf;
+  color: #0085ff;
   text-decoration: none;
 }
 article .entry {
@@ -513,7 +516,7 @@ article footer a {
   color: #999;
 }
 article footer a:hover {
-  color: #6cf;
+  color: #0085ff;
   text-decoration: none;
 }
 article footer a:before {
@@ -575,7 +578,7 @@ article footer .addthis iframe {
   margin-bottom: 50px;
 }
 #pagination a:hover {
-  background: #6cf;
+  background: #0085ff;
   color: #fff;
   text-decoration: none;
   text-shadow: none;
@@ -756,10 +759,10 @@ article footer .addthis iframe {
   font-size: 100%;
 }
 .entry .gist .gist-file .gist-meta a {
-  color: #6cf;
+  color: #0085ff;
 }
 .entry .gist .gist-file .gist-meta a:visited {
-  color: #6cf;
+  color: #0085ff;
 }
 figure.highlight {
   background: #eee;
