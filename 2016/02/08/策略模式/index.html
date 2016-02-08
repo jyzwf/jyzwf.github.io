@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>策略模式(上) | 冰弦</title>
+  <meta name="author" content="jyzwf">
+  
+  <meta name="description" content="day day up">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="策略模式(上)"/>
+  <meta property="og:site_name" content="冰弦"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/imgs/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="冰弦" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+   <link rel="stylesheet" href="/css/private_style.css" media="screen" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="head">
+  <h1>冰弦</h1>
+  <h2><a href="/">day day up</a></h2>
+</div>
+<nav id="main-nav">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="//about">关于</a></li>
+    
+      <li> <a href="/atom.xml">RSS</a></li>
+      <li> <a title="嗨起来" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//7xqjce.com1.z0.glb.clouddn.com/song.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class='myicon'>
+           <img src="http://7xqjce.com1.z0.glb.clouddn.com/myicon.png" width="35" height="35">
+        </div>
+        <time datetime="2016-02-08T02:41:24.000Z"><a href="/2016/02/08/策略模式/">2016-02-08</a></time>
+      
+      
+  
+    <h1 class="title">策略模式(上)</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>所谓策略模式就是定义一系列的算法，把他们一个个封装起来，并且他们可以互相替换<a id="more"></a><br>具体来说：定义一系列的算法，把他们各自封装成策略类，算法被封装在策略类内部。客户对Context发起请求时，Context总是把请求委托给这些策略类中间的某一个进行计算</p>
+<p>接下来我们来看一个实例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//未使用策略模式计算奖金</span></span><br><span class="line"><span class="keyword">var</span> calculateBouns = <span class="function"><span class="keyword">function</span>(<span class="params">performanceLever,salary</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>( performanceLever === <span class="string">'S'</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">4</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>( performanceLever === <span class="string">'A'</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">3</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>( performanceLever === <span class="string">'B'</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">2</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( calculateBouns( <span class="string">'S'</span>,<span class="number">1000</span> ) );	<span class="comment">//4000</span></span><br><span class="line"><span class="built_in">console</span>.log( calculateBouns( <span class="string">'B'</span>,<span class="number">1000</span> ) );	<span class="comment">//2000</span></span><br><span class="line"><span class="built_in">console</span>.log( calculateBouns( <span class="string">'A'</span>,<span class="number">1000</span> ) );	<span class="comment">//3000</span></span><br></pre></td></tr></table></figure></p>
+<p>这样子写存在很多缺点：</p>
+<ul>
+<li>calculateBouns函数庞大，包含太多<code>if...else</code>  </li>
+<li>函数缺乏弹性,如果继续增加一个考核等级，就必须在函数里面添加，违反<code>开放封闭原则</code></li>
+<li>算法复用性差，很难复用到其他地方</li>
+</ul>
+<p>接下来，我们就用策略模式来重构该例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//策略类：</span></span><br><span class="line"><span class="keyword">var</span> performanceS = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	performanceS.prototype.calculate = <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">4</span>;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> performanceA = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	performanceA.prototype.calculate = <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">3</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> performanceB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	performanceB.prototype.calculate = <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用环境</span></span><br><span class="line"><span class="keyword">var</span> Bouns = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.salary = <span class="literal">null</span>;</span><br><span class="line">	<span class="keyword">this</span>.strategy = <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Bouns.prototype.setSalary = <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.salary = salary;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Bouns.prototype.setStrategy = <span class="function"><span class="keyword">function</span>(<span class="params">strategy</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.strategy = strategy;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Bouns.prototype.getBouns = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.strategy.calculate( <span class="keyword">this</span>.salary )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bouns = <span class="keyword">new</span> Bouns();</span><br><span class="line">bouns.setSalary(<span class="string">'1000'</span>);</span><br><span class="line">bouns.setStrategy( <span class="keyword">new</span> performanceS() );</span><br><span class="line"><span class="built_in">console</span>.log( bouns.getBouns() );	<span class="comment">//4000</span></span><br><span class="line"></span><br><span class="line">bouns.setStrategy( <span class="keyword">new</span> performanceA() );</span><br><span class="line"><span class="built_in">console</span>.log( bouns.getBouns() )		<span class="comment">//3000</span></span><br></pre></td></tr></table></figure></p>
+<p>首先我们需要定义一个策略类，把有关计算奖金的算法逻辑及实现封装在其中，然后需要一个环境类，来接受客户的请求，并将请求委托给策略类，从而实现功能，注意：<code>Content里面要维持对一个策略类的引用</code>    </p>
+<p>以上是基于面向对象来书写的，在JS中，函数也是对象，所以接下来我们来看看JS版本的策略模式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strategy = &#123;			<span class="comment">//通过对象字面量的形式类把各个类写在其中</span></span><br><span class="line">	<span class="string">'S'</span>:<span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary*<span class="number">4</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">'A'</span>:<span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">3</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">'B'</span>:<span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> calculate = <span class="function"><span class="keyword">function</span>(<span class="params">performanceLever,salary</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> strategy[performanceLever](salary);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(calculate(<span class="string">'S'</span>,<span class="number">1000</span>))	<span class="comment">//4000</span></span><br><span class="line"><span class="built_in">console</span>.log( calculate(<span class="string">'A'</span>,<span class="number">2000</span>) ) 	<span class="comment">//6000</span></span><br></pre></td></tr></table></figure></p>
+<p>好，现在我们大致了解了<code>策略模式</code>大概长成啥样了，接下来，欲知后事如何，请听下回分解^_^</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/JSDesignModel/">JSDesignModel</a>
+  </div>
+
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="pagination" >
+    
+    <a href="/2016/02/08/策略模式（下）/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2016/02/04/毛玻璃/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+<section id="comment">
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="/2016/02/08/策略模式/" data-title="策略模式(上)" data-url="http://baidu.com/2016/02/08/策略模式/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"fcho"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:baidu.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angularjs/">Angularjs</a><small>1</small></li>
+  
+    <li><a href="/categories/CSS3/">CSS3</a><small>2</small></li>
+  
+    <li><a href="/categories/JSDesignModel/">JSDesignModel</a><small>7</small></li>
+  
+    <li><a href="/categories/git/">git</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Angularjs作用域/" style="font-size: 10px;">Angularjs作用域</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">学习乐园</h3>
+<ul class="entry">
+<li><a href="http://segmentfault.com/" title="segmentfault">segmentfault</a></li>
+<li><a href="http://www.w3cplus.com/" title="W3cplus">W3cplus</a></li>
+</ul>
+</div>
+
+  <div class="widget tag">
+<h3 class="title">交朋友</h3>
+<ul class="entry">
+<li>微信扫一扫，加个好友吧</li>
+<li><a href="http://7xqjce.com1.z0.glb.clouddn.com/weixin.jpeg" title="make friend"><img width="100%" src="http://7xqjce.com1.z0.glb.clouddn.com/weixin.jpeg"></a></li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div>
+  
+  &copy; 2016 jyzwf
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<div id="totop" style="position:fixed;bottom:50px;right:60px;cursor: pointer;">
+<a title="返回顶部"><img src="http://7xqjce.com1.z0.glb.clouddn.com/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+
+  <a href="https://github.com/jyzwf"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+</body>
+</html>
