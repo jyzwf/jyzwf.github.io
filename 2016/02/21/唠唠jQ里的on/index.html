@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>angular 指令作用域 | 冰弦</title>
+  <title>唠唠jQ里的on | 冰弦</title>
   <meta name="author" content="jyzwf">
   
   <meta name="description" content="day day up">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="angular 指令作用域"/>
+  <meta property="og:title" content="唠唠jQ里的on"/>
   <meta property="og:site_name" content="冰弦"/>
 
   
@@ -208,18 +208,34 @@
         <div class='myicon'>
            <img src="http://7xqjce.com1.z0.glb.clouddn.com/myicon.png" width="35" height="35">
         </div>
-        <time datetime="2016-02-01T16:06:54.000Z"><a href="/2016/02/02/angular-指令作用域/">2016-02-02</a></time>
+        <time datetime="2016-02-21T13:15:41.000Z"><a href="/2016/02/21/唠唠jQ里的on/">2016-02-21</a></time>
       
       
   
-    <h1 class="title">angular 指令作用域</h1>
+    <h1 class="title">唠唠jQ里的on</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>scope：<a href="https://segmentfault.com/a/1190000002773689#articleHeader1" target="_blank" rel="external">https://segmentfault.com/a/1190000002773689#articleHeader1</a></p>
-<p><a href="http://blog.jobbole.com/48593/" target="_blank" rel="external">http://blog.jobbole.com/48593/</a></p>
+        <p>在jQ里，给一个元素加上click等事件我们就会这样写：<code>$(&#39;.comment&#39;).click(fn)</code>,然而，当我们通过<code>ajax</code>动态加载出来的元素,使用此方法后无论怎么点，都没有任何反应，甚是奇怪<a id="more"></a></p>
+<p>于是，我就开始在网上查找资料，渐渐找到了一些思绪，原来上面那种写法只适合于一开始就是在页面上的元素，后来加载的就会GG了，T_T。那我们要怎么解决呢，于是既可以派出我们的<code>.on()</code>了。</p>
+<p>我们来看看文档上对<code>on</code>是怎么说的  </p>
+<blockquote>
+<p>在选择元素上绑定一个或多个事件的事件处理函数。<br>on()方法绑定事件处理程序到当前选定的jQuery对象中的元素。在jQuery 1.7中，.on()方法 提供绑定事件处理程序所需的所有功能。帮助从旧的jQuery事件方法转换，see .bind(), .delegate(), 和 .live(). 要删除的.on()绑定的事件，请参阅.off()。</p>
+</blockquote>
+<p>它的功能就是绑定事件，其实jquery里还有个<code>.live()</code>的功能是和它差不多的，不过1.7版本后就废弃了<code>.live()</code>,所以我们就接着唠<code>.on()</code>吧</p>
+<p>按照网上的来说，给元素用<code>.on()</code>绑定事件就可以么么哒了,像这样<code>$(&#39;.comment&#39;).on(&#39;click&#39;,fn)</code>,然而我通过js给html动态添加文件后，然并卵！！尼玛坑爹啊！！！!  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">media</span>=<span class="value">"screen"</span>&gt;</span><span class="css"></span><br><span class="line">	<span class="id">#div</span><span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100px</span></span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">100px</span></span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">background</span>:<span class="value">lime</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"> 	$(<span class="string">'p'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 	  alert(<span class="number">1</span>)</span><br><span class="line"> 	&#125;)</span><br><span class="line"></span><br><span class="line"> 	$(<span class="string">'#div'</span>).append($(<span class="string">'&lt;p&gt;我要弹出1&lt;/p&gt;'</span>))</span><br><span class="line">&#125;)</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>总不能放弃咯，，继续解决问题，网上又是一通查找，终于让我找到了，感动到哭T_T</p>
+<blockquote>
+<p>jQuery 使用on绑定动态生成的元素时，不能直接用该对象操作，而是选择其非动态生成的父节点然后再找到本身才能达到效果。</p>
+</blockquote>
+<p>按照他的方法，我把js改成了下面这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"> 	$(<span class="string">'#div'</span>).on(<span class="string">'click'</span>,<span class="string">'p'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 	  alert(<span class="number">1</span>)</span><br><span class="line"> 	&#125;)</span><br><span class="line"></span><br><span class="line"> 	$(<span class="string">'#div'</span>).append($(<span class="string">'&lt;p&gt;我要弹出1&lt;/p&gt;'</span>))</span><br><span class="line">&#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>结果终于弹出了久违的<code>1</code>，哈哈哈哈哈哈哈哈</p>
+<blockquote>
+<p><strong>注：</strong><code>.on()</code>方法会一直绑定一个元素，，所以不用时要手动用<code>.off()</code>解除事件的绑定</p>
+</blockquote>
 
       
     </div>
@@ -228,13 +244,13 @@
         
   
   <div class="categories">
-    <a href="/categories/Angularjs/">Angularjs</a>
+    <a href="/categories/jQuery/">jQuery</a>
   </div>
 
         
   
   <div class="tags">
-    <a href="/tags/Angularjs作用域/">Angularjs作用域</a>
+    <a href="/tags/注意点/">注意点</a>
   </div>
 
         
@@ -265,17 +281,15 @@
 
 <nav id="pagination" >
     
-    <a href="/2016/02/04/单例模式/" class="alignleft prev" >上一页</a>
     
-    
-    <a href="/2016/01/31/git-命令大全/" class="alignright next" >下一页</a>
+    <a href="/2016/02/08/策略模式（下）/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>
 
 <section id="comment">
 <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="/2016/02/02/angular-指令作用域/" data-title="angular 指令作用域" data-url="http://baidu.com/2016/02/02/angular-指令作用域/"></div>
+  <div class="ds-thread" data-thread-key="/2016/02/21/唠唠jQ里的on/" data-title="唠唠jQ里的on" data-url="http://baidu.com/2016/02/21/唠唠jQ里的on/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
