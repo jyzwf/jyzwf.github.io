@@ -375,10 +375,14 @@ article .entry .video-container {
 article .entry blockquote {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  font-style: italic;
+  border-left: 9px solid #7d7979;
   font-family: "Georgia", serif;
   font-size: 1.2em;
   padding: 0 15px;
+  color: #1cb1da;
+}
+article .entry blockquote:hover {
+  border-left: 9px solid #0085ff;
 }
 article .entry blockquote footer {
   border-top: none;
