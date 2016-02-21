@@ -373,8 +373,9 @@ article .entry .video-container {
   margin-bottom: 15px;
 }
 article .entry blockquote {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #ddd;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
   border-left: 9px solid #7d7979;
   font-family: "Georgia", serif;
   font-size: 1.2em;
