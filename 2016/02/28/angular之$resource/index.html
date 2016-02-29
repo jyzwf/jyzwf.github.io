@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>冰弦</title>
+  <title>angular之resource | 冰弦</title>
   <meta name="author" content="jyzwf">
   
   <meta name="description" content="day day up">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="angular之resource"/>
   <meta property="og:site_name" content="冰弦"/>
 
   
@@ -200,8 +200,7 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
@@ -213,23 +212,75 @@
       
       
   
-    <h1 class="title"><a href="/2016/02/28/angular之$resource/">angular之resource</a></h1>
+    <h1 class="title">angular之resource</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>$resource是Angular提供给我们的一个非常好用的服务，它可以创建一个资源对象，我们可以使用它，同支持<code>RESTFUL</code>的服务端进行交互
+        <p>$resource是Angular提供给我们的一个非常好用的服务，它可以创建一个资源对象，我们可以使用它，同支持<code>RESTFUL</code>的服务端进行交互<a id="more"></a><br>$resource服务本身就是一个创建资源对象的工厂，返回的$resource对象中包含了同后端进行交互的高层API。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> User = $resource(<span class="string">'/api/user/:userId.json'</span>,</span><br><span class="line">	&#123;</span><br><span class="line">	userId:<span class="string">'@id'</span></span><br><span class="line">	&#125;</span><br><span class="line">);</span><br><span class="line"><span class="comment">//可以把User对象理解成与RESTFUL后端服务进行交互的接口</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="24resource_API"><a href="#24resource_API" class="headerlink" title="$resource API"></a>$resource API</h1><p><strong>url(string)</strong><br>在这里传入一个包含所有参数的，用来定位资源的参数化URL字符串模板(参数以：符为前缀)    ，对于URL中的每个参数，都可以通过他们的名字来赋值:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$resource(<span class="string">'/api/users/:id.:format'</span>,&#123;</span><br><span class="line">	format:<span class="string">'json'</span>,</span><br><span class="line">	id:<span class="string">'123'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><code>注</code>：如果<code>:</code>之前的参数为空(上面例子中的:id)，那么URL中的这部分会被压缩为一个<code>.</code>符号  </p>
+<p><strong>paramDefault(可选，Object)</strong><br>这个参数包含了发送请求时URL中参数的默认值。对象中的键会与参数名进行匹配。如果我们传入了一个没有在URL设置过的参数，那么它会以普通的查询字符串的形式被发送。</p>
+<p><code>eg</code>: 如果URL字符串具有<code>/api/users/:id</code>这样的签名，并且我们将默认值设置为<code>{id:&#39;123&#39;,name:&#39;bob&#39;}</code>,那么URL最终会被转换为<code>/api/users/123?name=bob</code>  </p>
+<p>此外我么可以像上面那样硬编码确定URL参数中的值，也可以将其设置为从一个数据对象中读取的动态值<br>如果要设置为动态值，需要在值之前加上<code>@</code>字符做为前缀</p>
+<p><strong>action(可选 Object)</strong><br>动作对象是具有自定义动作，并且可以对默认的资源动作进行扩展的<code>hash对象</code><br>在这个对象中，对象的键就是自定义动作名，而<code>$http</code>设置对象的值就会对URL中相应的参数进行替换<br>如下我们在资源上自定义一个新的<code>update</code>动作：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$resource(<span class="string">'/api/users/:id.:format'</span>,&#123;</span><br><span class="line">format:<span class="string">'json'</span>,</span><br><span class="line">id:<span class="string">'123'</span></span><br><span class="line">&#125;,&#123;</span><br><span class="line">update:&#123;</span><br><span class="line">	method:<span class="string">'PUT'</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h1 id="u8D44_u6E90_u7C7B_u5BF9_u8C61_u7684_u5E38_u7528_u65B9_u6CD5_uFF1A"><a href="#u8D44_u6E90_u7C7B_u5BF9_u8C61_u7684_u5E38_u7528_u65B9_u6CD5_uFF1A" class="headerlink" title="资源类对象的常用方法："></a>资源类对象的常用方法：</h1><ol>
+<li><p>基于HTTP GET 方法:</p>
+<ol>
+<li>params(object):随请求一起发送的参数，可以是url中的具名参数，也可以是查询参数</li>
+<li>successfn：当HTTP请求成功时回调的函数 </li>
+<li><p>errorfn：当请求失败时的回调函数</p>
+<p><strong>get(params,successfn,errorfn)</strong><br>get方法向指定的URL发送一个GET请求，并期望一个JSON类型的相应，常被用于获取单个资源。</p>
+<p><strong>query(params,successfn,errorfn)</strong><br>query向指定的URL发送一个get请求，并期望返回一个JSON格式的资源对象的集合，数组</p>
+</li>
+</ol>
+</li>
+<li><p>基于非HTTP GET 类型的方法:</p>
+<ol>
+<li><p>payload:随请求发送的数据体</p>
+<p><strong>save(params,payload,successfn,errorfn)</strong><br>save方法向指定的url发送一个post请求，并用数据体来生成请求体。save()用来在服务器上生成一个行的资源</p>
+<p><strong>delete(params,payload,successfn,errorfn)</strong><br>delete方法向指定的url发送一个DELETE请求，并用数据体来生成请求体，被用来在服务器上删除一个实例</p>
+<p><strong>remove(params,payload,successfn,errorfn)</strong><br>与delete()方法作用完全相同，存在意义在于delete是保留字，在IE中会导致额外的问题</p>
+</li>
+</ol>
+</li>
+</ol>
+
       
     </div>
     <footer>
       
         
-          <div class="alignleft">
-            <a href="/2016/02/28/angular之$resource/#more" class="more-link">阅读全文</a>
-          </div>
+  
+  <div class="categories">
+    <a href="/categories/Angualr/">Angualr</a>
+  </div>
+
         
+  
+  <div class="tags">
+    <a href="/tags/http/">http</a>
+  </div>
+
         
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -238,167 +289,34 @@
 
 
 
+<nav id="pagination" >
+    
+    
+    <a href="/2016/02/22/移动端事件/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class='myicon'>
-           <img src="http://7xqjce.com1.z0.glb.clouddn.com/myicon.png" width="35" height="35">
-        </div>
-        <time datetime="2016-02-22T14:31:36.000Z"><a href="/2016/02/22/移动端事件/">2016-02-22</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2016/02/22/移动端事件/">移动端事件</a></h1>
-  
+<section id="comment">
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="/2016/02/28/angular之$resource/" data-title="angular之resource" data-url="http://baidu.com/2016/02/28/angular之$resource/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"fcho"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+</section>
 
-    </header>
-    <div class="entry">
-      
-        <p>随着智能手机的普及，使得移动端的开发越来越炙手可热，今天我们就来学习学习移动端的一些事件
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2016/02/22/移动端事件/#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class='myicon'>
-           <img src="http://7xqjce.com1.z0.glb.clouddn.com/myicon.png" width="35" height="35">
-        </div>
-        <time datetime="2016-02-21T13:15:41.000Z"><a href="/2016/02/21/唠唠jQ里的on/">2016-02-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2016/02/21/唠唠jQ里的on/">唠唠jQ里的on</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>在jQ里，给一个元素加上click等事件我们就会这样写：<code>$(&#39;.comment&#39;).click(fn)</code>,然而，当我们通过<code>ajax</code>动态加载出来的元素,使用此方法后无论怎么点，都没有任何反应，甚是奇怪
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2016/02/21/唠唠jQ里的on/#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class='myicon'>
-           <img src="http://7xqjce.com1.z0.glb.clouddn.com/myicon.png" width="35" height="35">
-        </div>
-        <time datetime="2016-02-08T03:02:11.000Z"><a href="/2016/02/08/策略模式（下）/">2016-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2016/02/08/策略模式（下）/">策略模式（下）</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>上面一篇文章，我们已经学会了基本的策略模式的书写，好，现在我们就来用些例子来巩固下
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2016/02/08/策略模式（下）/#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class='myicon'>
-           <img src="http://7xqjce.com1.z0.glb.clouddn.com/myicon.png" width="35" height="35">
-        </div>
-        <time datetime="2016-02-08T02:41:24.000Z"><a href="/2016/02/08/策略模式/">2016-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2016/02/08/策略模式/">策略模式(上)</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>所谓策略模式就是定义一系列的算法，把他们一个个封装起来，并且他们可以互相替换
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2016/02/08/策略模式/#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-<nav id="pagination">
-  
-  
-    <a href="/page/2/" class="alignright next">下一页</a>
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">

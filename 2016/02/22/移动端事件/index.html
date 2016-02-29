@@ -251,8 +251,11 @@ target  触摸的DOM节点目标,是动作所针对的目标。
 <p><strong>触摸事件和手势事件的之间关系</strong><br>    当一个手指放在屏幕上时，会触发touchstart事件，而另一个手指触摸在屏幕上时触发gesturestart事件，随后触发基于该手指的touchstart事件。<br>      如果一个或两个手指在屏幕上滑动时，将会触发gesturechange事件，但是只要有一个手指移开时候，则会触发gestureend事件，紧接着会触发touchend事件。  </p>
 <p><strong>手势专有属性</strong><br>    <code>rotation</code>: 表示手指变化引起的旋转角度，负值表示逆时针，正值表示顺时针，从0开始；<br>    <code>scale</code>: 表示2个手指之间的距离情况，向内收缩会缩短距离，这个值从1开始的，并随距离拉大而增长。</p>
 <h1 id="4_3A__u57FA_u672C_u77E5_u8BC6_u70B9"><a href="#4_3A__u57FA_u672C_u77E5_u8BC6_u70B9" class="headerlink" title="4: 基本知识点"></a>4: 基本知识点</h1><ol>
-<li><p>自动大写与自动修正:<br>要关闭这两项功能，可以通过autocapitalize 与autocorrect 这两个选项：(好像安卓上没用。。。)</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">autocapitalize</span>=<span class="value">"off"</span> <span class="attribute">autocorrect</span>=<span class="value">"off"</span> /&gt;</span></span><br><span class="line">```	</span><br><span class="line">2. 禁止用户选中文字(好像安卓上也没用。。。)：</span><br><span class="line">```css</span><br><span class="line">	-webkit-touch-callout:none</span><br></pre></td></tr></table></figure>
+<li><p>自动大写与自动修正:要关闭这两项功能，可以通过autocapitalize 与autocorrect 这两个选项：(好像安卓上没用。。。)  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">autocapitalize</span>=<span class="value">"off"</span> <span class="attribute">autocorrect</span>=<span class="value">"off"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>禁止用户选中文字(好像安卓上也没用。。。)：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-touch-callout:none</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>关于 iOS 系统中，中文输入法输入英文时，字母之间可能会出现一个六分之一空格</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.value = <span class="keyword">this</span>.value.replace(<span class="regexp">/\u2006/g</span>, <span class="string">''</span>);</span><br></pre></td></tr></table></figure>
@@ -310,6 +313,8 @@ target  触摸的DOM节点目标,是动作所针对的目标。
 
 <nav id="pagination" >
     
+    <a href="/2016/02/28/angular之$resource/" class="alignleft prev" >上一页</a>
+    
     
     <a href="/2016/02/21/唠唠jQ里的on/" class="alignright next" >下一页</a>
     
@@ -349,6 +354,8 @@ var duoshuoQuery = {short_name:"fcho"};
   <h3 class="title">分类</h3>
   <ul class="entry">
   
+    <li><a href="/categories/Angualr/">Angualr</a><small>1</small></li>
+  
     <li><a href="/categories/Angularjs/">Angularjs</a><small>1</small></li>
   
     <li><a href="/categories/CSS3/">CSS3</a><small>2</small></li>
@@ -369,7 +376,7 @@ var duoshuoQuery = {short_name:"fcho"};
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/Angularjs作用域/" style="font-size: 10px;">Angularjs作用域</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a>
+    <a href="/tags/Angularjs作用域/" style="font-size: 10px;">Angularjs作用域</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a>
   </div>
 </div>
 
