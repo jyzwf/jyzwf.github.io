@@ -1,6 +1,6 @@
 document.addEventListener('visibilitychange',function(){
 	document.title = document.hidden ? '客官再玩玩嘛' :'客官你好帅'
-})
+});
 
 (function($) { 
 	// When to show the scroll link
