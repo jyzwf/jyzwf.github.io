@@ -1,379 +1,499 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   
   <title>git 命令大全 | 冰弦</title>
-  <meta name="author" content="jyzwf">
-  
-  <meta name="description" content="day day up">
-  
-  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="git 命令大全"/>
-  <meta property="og:site_name" content="冰弦"/>
-
+  <meta name="description" content="最近几天开始学习git，赶脚命令好多，记不住有木有，不管怎样先把这些命令收集了再说~~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git 命令大全">
+<meta property="og:url" content="http://baidu.com/2016/01/31/git-命令大全/index.html">
+<meta property="og:site_name" content="冰弦">
+<meta property="og:description" content="最近几天开始学习git，赶脚命令好多，记不住有木有，不管怎样先把这些命令收集了再说~~">
+<meta property="og:updated_time" content="2016-01-31T15:03:52.148Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git 命令大全">
+<meta name="twitter:description" content="最近几天开始学习git，赶脚命令好多，记不住有木有，不管怎样先把这些命令收集了再说~~">
   
-    <meta property="og:image" content="undefined"/>
+    <link rel="alternative" href="/atom.xml" title="冰弦" type="application/atom+xml">
   
-
-  <link href="/imgs/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="alternate" href="/atom.xml" title="冰弦" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-   <link rel="stylesheet" href="/css/private_style.css" media="screen" type="text/css">
-
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 </head>
-
-
 <body>
-  <header id="header" class="inner"><div class="head">
-  <h1>冰弦</h1>
-  <h2><a href="/">day day up</a></h2>
-</div>
-<nav id="main-nav">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">归档</a></li>
-    
-      <li><a href="//about">关于</a></li>
-    
-      <li> <a href="/atom.xml">RSS</a></li>
-      <li> <a title="嗨起来" href='javascript:(function() {
-	function c() {
-		var e = document.createElement("link");
-		e.setAttribute("type", "text/css");
-		e.setAttribute("rel", "stylesheet");
-		e.setAttribute("href", f);
-		e.setAttribute("class", l);
-		document.body.appendChild(e)
-	}
- 
-	function h() {
-		var e = document.getElementsByClassName(l);
-		for (var t = 0; t < e.length; t++) {
-			document.body.removeChild(e[t])
-		}
-	}
- 
-	function p() {
-		var e = document.createElement("div");
-		e.setAttribute("class", a);
-		document.body.appendChild(e);
-		setTimeout(function() {
-			document.body.removeChild(e)
-		}, 100)
-	}
- 
-	function d(e) {
-		return {
-			height : e.offsetHeight,
-			width : e.offsetWidth
-		}
-	}
- 
-	function v(i) {
-		var s = d(i);
-		return s.height > e && s.height < n && s.width > t && s.width < r
-	}
- 
-	function m(e) {
-		var t = e;
-		var n = 0;
-		while (!!t) {
-			n += t.offsetTop;
-			t = t.offsetParent
-		}
-		return n
-	}
- 
-	function g() {
-		var e = document.documentElement;
-		if (!!window.innerWidth) {
-			return window.innerHeight
-		} else if (e && !isNaN(e.clientHeight)) {
-			return e.clientHeight
-		}
-		return 0
-	}
- 
-	function y() {
-		if (window.pageYOffset) {
-			return window.pageYOffset
-		}
-		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-	}
- 
-	function E(e) {
-		var t = m(e);
-		return t >= w && t <= b + w
-	}
- 
-	function S() {
-		var e = document.createElement("audio");
-		e.setAttribute("class", l);
-		e.src = i;
-		e.loop = false;
-		e.addEventListener("canplay", function() {
-			setTimeout(function() {
-				x(k)
-			}, 500);
-			setTimeout(function() {
-				N();
-				p();
-				for (var e = 0; e < O.length; e++) {
-					T(O[e])
-				}
-			}, 15500)
-		}, true);
-		e.addEventListener("ended", function() {
-			N();
-			h()
-		}, true);
-		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-		document.body.appendChild(e);
-		e.play()
-	}
- 
-	function x(e) {
-		e.className += " " + s + " " + o
-	}
- 
-	function T(e) {
-		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-	}
- 
-	function N() {
-		var e = document.getElementsByClassName(s);
-		var t = new RegExp("\\b" + s + "\\b");
-		for (var n = 0; n < e.length; ) {
-			e[n].className = e[n].className.replace(t, "")
-		}
-	}
- 
-	var e = 30;
-	var t = 30;
-	var n = 350;
-	var r = 350;
-	var i = "//7xqjce.com1.z0.glb.clouddn.com/song.mp3";
-	var s = "mw-harlem_shake_me";
-	var o = "im_first";
-	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-	var a = "mw-strobe_light";
-	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-	var l = "mw_added_css";
-	var b = g();
-	var w = y();
-	var C = document.getElementsByTagName("*");
-	var k = null;
-	for (var L = 0; L < C.length; L++) {
-		var A = C[L];
-		if (v(A)) {
-			if (E(A)) {
-				k = A;
-				break
-			}
-		}
-	}
-	if (A === null) {
-		console.warn("Could not find a node of the right size. Please try a different page.");
-		return
-	}
-	c();
-	S();
-	var O = [];
-	for (var L = 0; L < C.length; L++) {
-		var A = C[L];
-		if (v(A)) {
-			O.push(A)
-		}
-	}
-})()    '>High一下</a> </li>
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div>
-</header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class='myicon'>
-           <img src="http://7xqjce.com1.z0.glb.clouddn.com/myicon.png" width="35" height="35">
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">jyzwf</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">day day up</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/jyzwf" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl facebook" target="_blank" href="/#" title="facebook">facebook</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Angularjs作用域/" style="font-size: 10px;">Angularjs作用域</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">帅气男孩，，哈哈</div>
+                </section>
+                
+            </div>
         </div>
-        <time datetime="2016-01-31T14:50:40.000Z"><a href="/2016/01/31/git-命令大全/">2016-01-31</a></time>
-      
-      
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">jyzwf</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">jyzwf</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">day day up</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/jyzwf" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="facebook" target="_blank" href="/#" title="facebook">facebook</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-git-命令大全" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <h1 class="title">git 命令大全</h1>
+    <div class="article-meta">
+      <a href="/2016/01/31/git-命令大全/" class="article-date">
+      <time datetime="2016-01-31T14:50:40.000Z" itemprop="datePublished">2016-01-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git 命令大全
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
       
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/git/">git</a>
+    </div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
         <p>最近几天开始学习git，赶脚命令好多，记不住有木有，不管怎样先把这些命令收集了再说~~<a id="more"></a><br><strong>git 命令</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init                                                  # &#21021;&#22987;&#21270;&#26412;&#22320;git&#20179;&#24211;&#65288;&#21019;&#24314;&#26032;&#20179;&#24211;&#65289;&#10;git config --global user.name &#34;xxx&#34;                       # &#37197;&#32622;&#29992;&#25143;&#21517;&#10;git config --global user.email &#34;xxx@xxx.com&#34;              # &#37197;&#32622;&#37038;&#20214;&#10;git config --global color.ui true                         # git status&#31561;&#21629;&#20196;&#33258;&#21160;&#30528;&#33394;&#10;git config --global color.status auto&#10;git config --global color.diff auto&#10;git config --global color.branch auto&#10;git config --global color.interactive auto&#10;git config --global --unset http.proxy                    # remove  proxy configuration on git&#10;git clone git+ssh://git@192.168.53.168/VT.git             # clone&#36828;&#31243;&#20179;&#24211;&#10;git status                                                # &#26597;&#30475;&#24403;&#21069;&#29256;&#26412;&#29366;&#24577;&#65288;&#26159;&#21542;&#20462;&#25913;&#65289;&#10;git add xyz                                               # &#28155;&#21152;xyz&#25991;&#20214;&#33267;index&#10;git add .                                                 # &#22686;&#21152;&#24403;&#21069;&#23376;&#30446;&#24405;&#19979;&#25152;&#26377;&#26356;&#25913;&#36807;&#30340;&#25991;&#20214;&#33267;index&#10;git commit -m &#39;xxx&#39;                                       # &#25552;&#20132;&#10;git commit --amend -m &#39;xxx&#39;                               # &#21512;&#24182;&#19978;&#19968;&#27425;&#25552;&#20132;&#65288;&#29992;&#20110;&#21453;&#22797;&#20462;&#25913;&#65289;&#10;git commit -am &#39;xxx&#39;                                      # &#23558;add&#21644;commit&#21512;&#20026;&#19968;&#27493;&#10;git rm xxx                                                # &#21024;&#38500;index&#20013;&#30340;&#25991;&#20214;&#10;git rm -r *                                               # &#36882;&#24402;&#21024;&#38500;&#10;git log                                                   # &#26174;&#31034;&#25552;&#20132;&#26085;&#24535;&#10;git log -1                                                # &#26174;&#31034;1&#34892;&#26085;&#24535; -n&#20026;n&#34892;&#10;git log -5&#10;git log --stat                                            # &#26174;&#31034;&#25552;&#20132;&#26085;&#24535;&#21450;&#30456;&#20851;&#21464;&#21160;&#25991;&#20214;&#10;git log -p -m&#10;git show dfb02e6e4f2f7b573337763e5c0013802e392818         # &#26174;&#31034;&#26576;&#20010;&#25552;&#20132;&#30340;&#35814;&#32454;&#20869;&#23481;&#10;git show dfb02                                            # &#21487;&#21482;&#29992;commitid&#30340;&#21069;&#20960;&#20301;&#10;git show HEAD                                             # &#26174;&#31034;HEAD&#25552;&#20132;&#26085;&#24535;&#10;git show HEAD^                                            # &#26174;&#31034;HEAD&#30340;&#29238;&#65288;&#19978;&#19968;&#20010;&#29256;&#26412;&#65289;&#30340;&#25552;&#20132;&#26085;&#24535; ^^&#20026;&#19978;&#20004;&#20010;&#29256;&#26412; ^5&#20026;&#19978;5&#20010;&#29256;&#26412;&#10;git tag                                                   # &#26174;&#31034;&#24050;&#23384;&#22312;&#30340;tag&#10;git tag -a v2.0 -m &#39;xxx&#39;                                  # &#22686;&#21152;v2.0&#30340;tag&#10;git show v2.0                                             # &#26174;&#31034;v2.0&#30340;&#26085;&#24535;&#21450;&#35814;&#32454;&#20869;&#23481;&#10;git log v2.0                                              # &#26174;&#31034;v2.0&#30340;&#26085;&#24535;&#10;git diff                                                  # &#26174;&#31034;&#25152;&#26377;&#26410;&#28155;&#21152;&#33267;index&#30340;&#21464;&#26356;&#10;git diff --cached                                         # &#26174;&#31034;&#25152;&#26377;&#24050;&#28155;&#21152;index&#20294;&#36824;&#26410;commit&#30340;&#21464;&#26356;&#10;git diff HEAD^                                            # &#27604;&#36739;&#19982;&#19978;&#19968;&#20010;&#29256;&#26412;&#30340;&#24046;&#24322;&#10;git diff HEAD -- ./lib                                    # &#27604;&#36739;&#19982;HEAD&#29256;&#26412;lib&#30446;&#24405;&#30340;&#24046;&#24322;&#10;git diff origin/master..master                            # &#27604;&#36739;&#36828;&#31243;&#20998;&#25903;master&#19978;&#26377;&#26412;&#22320;&#20998;&#25903;master&#19978;&#27809;&#26377;&#30340;&#10;git diff origin/master..master --stat                     # &#21482;&#26174;&#31034;&#24046;&#24322;&#30340;&#25991;&#20214;&#65292;&#19981;&#26174;&#31034;&#20855;&#20307;&#20869;&#23481;&#10;git remote add origin git+ssh://git@192.168.53.168/VT.git # &#22686;&#21152;&#36828;&#31243;&#23450;&#20041;&#65288;&#29992;&#20110;push/pull/fetch&#65289;&#10;git branch                                                # &#26174;&#31034;&#26412;&#22320;&#20998;&#25903;&#10;git branch --contains 50089                               # &#26174;&#31034;&#21253;&#21547;&#25552;&#20132;50089&#30340;&#20998;&#25903;&#10;git branch -a                                             # &#26174;&#31034;&#25152;&#26377;&#20998;&#25903;&#10;git branch -r                                             # &#26174;&#31034;&#25152;&#26377;&#21407;&#21019;&#20998;&#25903;&#10;git branch --merged                                       # &#26174;&#31034;&#25152;&#26377;&#24050;&#21512;&#24182;&#21040;&#24403;&#21069;&#20998;&#25903;&#30340;&#20998;&#25903;&#10;git branch --no-merged                                    # &#26174;&#31034;&#25152;&#26377;&#26410;&#21512;&#24182;&#21040;&#24403;&#21069;&#20998;&#25903;&#30340;&#20998;&#25903;&#10;git branch -m master master_copy                          # &#26412;&#22320;&#20998;&#25903;&#25913;&#21517;&#10;git checkout -b master_copy                               # &#20174;&#24403;&#21069;&#20998;&#25903;&#21019;&#24314;&#26032;&#20998;&#25903;master_copy&#24182;&#26816;&#20986;&#10;git checkout -b master master_copy                        # &#19978;&#38754;&#30340;&#23436;&#25972;&#29256;&#10;git checkout features/performance                         # &#26816;&#20986;&#24050;&#23384;&#22312;&#30340;features/performance&#20998;&#25903;&#10;git checkout --track hotfixes/BJVEP933                    # &#26816;&#20986;&#36828;&#31243;&#20998;&#25903;hotfixes/BJVEP933&#24182;&#21019;&#24314;&#26412;&#22320;&#36319;&#36394;&#20998;&#25903;&#10;git checkout v2.0                                         # &#26816;&#20986;&#29256;&#26412;v2.0&#10;git checkout -b devel origin/develop                      # &#20174;&#36828;&#31243;&#20998;&#25903;develop&#21019;&#24314;&#26032;&#26412;&#22320;&#20998;&#25903;devel&#24182;&#26816;&#20986;&#10;git checkout -- README                                    # &#26816;&#20986;head&#29256;&#26412;&#30340;README&#25991;&#20214;&#65288;&#21487;&#29992;&#20110;&#20462;&#25913;&#38169;&#35823;&#22238;&#36864;&#65289;&#10;git merge origin/master                                   # &#21512;&#24182;&#36828;&#31243;master&#20998;&#25903;&#33267;&#24403;&#21069;&#20998;&#25903;&#10;git cherry-pick ff44785404a8e                             # &#21512;&#24182;&#25552;&#20132;ff44785404a8e&#30340;&#20462;&#25913;&#10;git push origin master                                    # &#23558;&#24403;&#21069;&#20998;&#25903;push&#21040;&#36828;&#31243;master&#20998;&#25903;&#10;git push origin :hotfixes/BJVEP933                        # &#21024;&#38500;&#36828;&#31243;&#20179;&#24211;&#30340;hotfixes/BJVEP933&#20998;&#25903;&#10;git push --tags                                           # &#25226;&#25152;&#26377;tag&#25512;&#36865;&#21040;&#36828;&#31243;&#20179;&#24211;&#10;git fetch                                                 # &#33719;&#21462;&#25152;&#26377;&#36828;&#31243;&#20998;&#25903;&#65288;&#19981;&#26356;&#26032;&#26412;&#22320;&#20998;&#25903;&#65292;&#21478;&#38656;merge&#65289;&#10;git fetch --prune                                         # &#33719;&#21462;&#25152;&#26377;&#21407;&#21019;&#20998;&#25903;&#24182;&#28165;&#38500;&#26381;&#21153;&#22120;&#19978;&#24050;&#21024;&#25481;&#30340;&#20998;&#25903;&#10;git pull origin master                                    # &#33719;&#21462;&#36828;&#31243;&#20998;&#25903;master&#24182;merge&#21040;&#24403;&#21069;&#20998;&#25903;&#10;git mv README README2                                     # &#37325;&#21629;&#21517;&#25991;&#20214;README&#20026;README2&#10;git reset --hard HEAD                                     # &#23558;&#24403;&#21069;&#29256;&#26412;&#37325;&#32622;&#20026;HEAD&#65288;&#36890;&#24120;&#29992;&#20110;merge&#22833;&#36133;&#22238;&#36864;&#65289;&#10;git rebase&#10;git branch -d hotfixes/BJVEP933                           # &#21024;&#38500;&#20998;&#25903;hotfixes/BJVEP933&#65288;&#26412;&#20998;&#25903;&#20462;&#25913;&#24050;&#21512;&#24182;&#21040;&#20854;&#20182;&#20998;&#25903;&#65289;&#10;git branch -D hotfixes/BJVEP933                           # &#24378;&#21046;&#21024;&#38500;&#20998;&#25903;hotfixes/BJVEP933&#10;git ls-files                                              # &#21015;&#20986;git index&#21253;&#21547;&#30340;&#25991;&#20214;&#10;git show-branch                                           # &#22270;&#31034;&#24403;&#21069;&#20998;&#25903;&#21382;&#21490;&#10;git show-branch --all                                     # &#22270;&#31034;&#25152;&#26377;&#20998;&#25903;&#21382;&#21490;&#10;git whatchanged                                           # &#26174;&#31034;&#25552;&#20132;&#21382;&#21490;&#23545;&#24212;&#30340;&#25991;&#20214;&#20462;&#25913;&#10;git revert dfb02e6e4f2f7b573337763e5c0013802e392818       # &#25764;&#38144;&#25552;&#20132;dfb02e6e4f2f7b573337763e5c0013802e392818&#10;git ls-tree HEAD                                          # &#20869;&#37096;&#21629;&#20196;&#65306;&#26174;&#31034;&#26576;&#20010;git&#23545;&#35937;&#10;git rev-parse v2.0                                        # &#20869;&#37096;&#21629;&#20196;&#65306;&#26174;&#31034;&#26576;&#20010;ref&#23545;&#20110;&#30340;SHA1 HASH&#10;git reflog                                                # &#26174;&#31034;&#25152;&#26377;&#25552;&#20132;&#65292;&#21253;&#25324;&#23396;&#31435;&#33410;&#28857;&#10;git show HEAD@&#123;5&#125;&#10;git show master@&#123;yesterday&#125;                               # &#26174;&#31034;master&#20998;&#25903;&#26152;&#22825;&#30340;&#29366;&#24577;&#10;git log --pretty=format:&#39;%h %s&#39; --graph                   # &#22270;&#31034;&#25552;&#20132;&#26085;&#24535;&#10;git show HEAD~3&#10;git show -s --pretty=raw 2be7fcb476&#10;git stash                                                 # &#26242;&#23384;&#24403;&#21069;&#20462;&#25913;&#65292;&#23558;&#25152;&#26377;&#33267;&#20026;HEAD&#29366;&#24577;&#10;git stash list                                            # &#26597;&#30475;&#25152;&#26377;&#26242;&#23384;&#10;git stash show -p stash@&#123;0&#125;                               # &#21442;&#32771;&#31532;&#19968;&#27425;&#26242;&#23384;&#10;git stash apply stash@&#123;0&#125;                                 # &#24212;&#29992;&#31532;&#19968;&#27425;&#26242;&#23384;&#10;git grep &#34;delete from&#34;                                    # &#25991;&#20214;&#20013;&#25628;&#32034;&#25991;&#26412;&#8220;delete from&#8221;&#10;git grep -e &#39;#define&#39; --and -e SORT_DIRENT&#10;git gc&#10;git fsck</span><br></pre></td></tr></table></figure>
       
+
     </div>
-    <footer>
-      
-        
+    
+  </div>
   
-  <div class="categories">
-    <a href="/categories/git/">git</a>
-  </div>
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/01/31/git-命令大全/">git 命令大全</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 jyzwf 的个人博客">jyzwf</a></p>
+        <p><span>发布时间:</span>2016年01月31日 - 22时50分</p>
+        <p><span>最后更新:</span>2016年01月31日 - 23时03分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/31/git-命令大全/" title="git 命令大全">http://baidu.com/2016/01/31/git-命令大全/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/01/31/git-命令大全/　　作者: jyzwf" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/02/02/angular-指令作用域/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
         
+          angular 指令作用域
         
-  <div class="addthis addthis_toolbox addthis_default_style">
-    
-      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-    
-    
-      <a class="addthis_button_tweet"></a>
-    
-    
-      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-    
-    
-      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-    
-    <a class="addthis_counter addthis_pill_style"></a>
-  </div>
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
-
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-<nav id="pagination" >
-    
-    <a href="/2016/02/02/angular-指令作用域/" class="alignleft prev" >上一页</a>
-    
-    
-    <a href="/2016/01/31/续谈闭包/" class="alignright next" >下一页</a>
-    
-    <div class="clearfix"></div>
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/31/续谈闭包/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">续谈闭包</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
 </nav>
 
-<section id="comment">
-<!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="/2016/01/31/git-命令大全/" data-title="git 命令大全" data-url="http://baidu.com/2016/01/31/git-命令大全/"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"fcho"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共JS代码 end -->
-</section>
+  
+</article>
 
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:baidu.com">
-  </form>
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
 </div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
 
-  
-<div class="widget tag">
-  <h3 class="title">分类</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/Angualr/">Angualr</a><small>1</small></li>
-  
-    <li><a href="/categories/Angularjs/">Angularjs</a><small>1</small></li>
-  
-    <li><a href="/categories/CSS3/">CSS3</a><small>2</small></li>
-  
-    <li><a href="/categories/JSDesignModel/">JSDesignModel</a><small>7</small></li>
-  
-    <li><a href="/categories/Javascript/">Javascript</a><small>1</small></li>
-  
-    <li><a href="/categories/git/">git</a><small>1</small></li>
-  
-    <li><a href="/categories/http/">http</a><small>1</small></li>
-  
-    <li><a href="/categories/jQuery/">jQuery</a><small>1</small></li>
-  
-  </ul>
-</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
 
-  
-<div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
-  <div class="entry">
-    <a href="/tags/Angularjs作用域/" style="font-size: 10px;">Angularjs作用域</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a>
-  </div>
-</div>
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
 
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
 
-  <div class="widget tag">
-<h3 class="title">学习乐园</h3>
-<ul class="entry">
-<li><a href="http://segmentfault.com/" title="segmentfault">segmentfault</a></li>
-<li><a href="http://www.w3cplus.com/" title="W3cplus">W3cplus</a></li>
-</ul>
-</div>
-
-  <div class="widget tag">
-<h3 class="title">交朋友</h3>
-<ul class="entry">
-<li>微信扫一扫，加个好友吧</li>
-<li><a href="http://7xqjce.com1.z0.glb.clouddn.com/weixin.jpeg" title="make friend"><img width="100%" src="http://7xqjce.com1.z0.glb.clouddn.com/weixin.jpeg"></a></li>
-</ul>
-</div>
-</aside>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><div>
-  
-  &copy; 2016 jyzwf
-  
-</div>
-<div class="clearfix"></div></footer>
-  <script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
 </script>
 
-<div id="totop" style="position:fixed;bottom:50px;right:60px;cursor: pointer;">
-<a title="返回顶部"><img src="http://7xqjce.com1.z0.glb.clouddn.com/scrollup.png"/></a>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
 </div>
-<script src="/js/totop.js"></script>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
-  <a href="https://github.com/jyzwf"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/01/31/git-命令大全/" data-title="git 命令大全" data-url="http://baidu.com/2016/01/31/git-命令大全/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"luums"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/02/02/angular-指令作用域/" title="上一篇: angular 指令作用域">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/01/31/续谈闭包/" title="下一篇: 续谈闭包">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/angular之$resource/">angular之resource</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/移动端事件/">移动端事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/唠唠jQ里的on/">唠唠jQ里的on</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式（下）/">策略模式（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式/">策略模式(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/毛玻璃/">毛玻璃</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/单例模式/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/angular-指令作用域/">angular 指令作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/git-命令大全/">git 命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/续谈闭包/">续谈闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/闭包/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/call-AND-apply/">call AND apply</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/浅谈tjavascript里的this/">浅谈javascript里的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/css3-折角效果/">css3 折角效果</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div>
+                &copy; 2016 jyzwf
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 21;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+  </div>
 </body>
 </html>
