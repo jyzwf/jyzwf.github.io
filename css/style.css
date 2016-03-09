@@ -142,10 +142,6 @@ body {
   color: #000;
   -webkit-overflow-scrolling: touch;
 }
-::selection {
-  background: #5c4cdd;
-  color: #000;
-}
 h2,
 h3,
 h4,
@@ -2233,13 +2229,10 @@ a {
   border-bottom: none;
 }
 .scroll a .fa {
-  color: rgba(255,255,255,0.8);
-}
-.scroll a:hover {
-  background: rgba(147,181,224,0.3) !important;
+  color: #03a9f4;
 }
 .scroll a:hover .fa {
-  color: #fff;
+  color: #c203f4;
 }
 .hide-labels {
   position: fixed;
@@ -2288,7 +2281,7 @@ a {
   color: #808080;
 }
 .post-list li a:hover {
-color
+  color: #03a9f4;
   text-decoration: none;
 }
 .post-list li:hover a {
@@ -2745,7 +2738,7 @@ color
   transition: background 0.3s;
 }
 .article-more-link a:hover {
-  background: #3f3f3f;
+  background: #03a9f4;
 }
 .article-more-link a.hidden {
   visibility: hidden;
@@ -2786,7 +2779,7 @@ color
   background: #248eb7;
 }
 #article-nav .article-nav-link-wrap:hover .article-nav-title {
-  color: #fff;
+  color: #2196f3;
 }
 #article-nav #article-nav-older {
   float: right;
@@ -2833,7 +2826,7 @@ color
   color: #999;
 }
 .post-list li a:hover {
-  color: #fff;
+  color: #03a9f4;
 }
 #toc {
   float: right;
@@ -2847,7 +2840,7 @@ color
   color: #fff;
 }
 #toc a:hover {
-  color: #fff;
+  color: #03a9f4;
   text-decoration: none;
 }
 #toc li:hover {
@@ -3216,9 +3209,11 @@ color
 }
 .article-entry code {
   background: #fbedeb;
-  padding: 0 0.3em;
+  padding: 1px 0.3em;
   border: none;
   color: #e2678f;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 .article-entry pre {
   color: #fff;
@@ -3354,7 +3349,7 @@ color
   margin: 0 10px;
 }
 .article-entry li:hover {
-  background-color: #2e2e2e;
+  background-color: rgba(3,169,244,0.3);
 }
 .article-entry .highlight {
   -webkit-border-radius: 4px;
@@ -3552,7 +3547,7 @@ pre .link_url {
   -moz-osx-font-smoothing: grayscale;
 }
 .bdshare-button-style2-24 .fx:hover {
-  color: #fff;
+  color: #03a9f4;
   opacity: 1;
 }
 .share {
