@@ -479,6 +479,10 @@
     <a id='toButtom' ><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
+document.addEventListener('visibilitychange',function(){
+    document.title = document.hidden ? '客官再玩玩嘛' :'客官你好帅'
+});
+
     $(document).ready(function() {
        /* if ($("#comments").length < 1) {
             $("#scroll > a:nth-child(2)").hide();
