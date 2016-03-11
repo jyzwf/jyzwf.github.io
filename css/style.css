@@ -2617,6 +2617,7 @@ a {
 }
 .article-entry blockquote p {
   margin-top: 0;
+  overflow: auto;
 }
 .article-entry em {
   font-style: italic;
@@ -2628,14 +2629,6 @@ a {
 .article-entry li ul,
 .article-entry li ol {
   margin-left: 30px;
-}
-.article-entry li ul li:before,
-.article-entry li ol li:before {
-  content: "\f05d";
-  font: normal normal normal 14px/1 FontAwesome;
-  display: inline-block;
-  margin: 0 10px;
-  line-height: 28px;
 }
 .article-entry video {
   max-width: 100%;
@@ -3241,23 +3234,16 @@ a {
   white-space: pre;
 }
 .article-entry p a {
-  border: dashed 1px #000;
   padding: 1px 8px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  background-color: #2f2e2e;
   word-wrap: break-word;
   white-space: pre;
   margin: 2px;
   display: inline-block;
 }
-.article-entry p a::before {
-  padding-right: 6px;
-  content: "\f0c1";
-  font: normal normal normal 14px/1 FontAwesome;
-}
 .article-entry p a:hover {
-  color: #fff;
+  color: #c74040;
 }
 .article-entry h1 {
   font-size: 1.5em;
@@ -3328,23 +3314,6 @@ a {
   height: 3px;
   border: 0;
   margin: 10px 0;
-}
-.article-entry ul li:before {
-  content: "\f05d";
-  font: normal normal normal 14px/1 FontAwesome;
-  display: inline-block;
-  margin: 0 10px;
-  line-height: 28px;
-}
-.article-entry ul li:before ul li {
-  margin-left: 20px;
-}
-.article-entry ul li:before ul li:before {
-  content: "\f05d";
-  font: normal normal normal 14px/1 FontAwesome;
-  display: inline-block;
-  margin: 0 10px;
-  line-height: 28px;
 }
 .article-entry ol li {
   list-style: decimal;
