@@ -2213,6 +2213,7 @@ a {
   right: 0;
 }
 .scroll {
+  display: none;
   z-index: 999;
   position: fixed;
   bottom: 40px;
@@ -2220,6 +2221,7 @@ a {
   line-height: 42px;
 }
 .scroll a {
+  cursor: pointer;
   display: block;
   width: 29px;
   height: 42px;
@@ -3347,9 +3349,6 @@ a {
 .article-entry ol li {
   list-style: decimal;
   margin: 0 10px;
-}
-.article-entry li:hover {
-  background-color: rgba(3,169,244,0.3);
 }
 .article-entry .highlight {
   -webkit-border-radius: 4px;

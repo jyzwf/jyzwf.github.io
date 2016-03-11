@@ -107,26 +107,26 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/Home">博客首页</a></li>
+                            <li><a href="/">博客首页</a></li>
                         
-                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                            <li><a href="/">前端导航</a></li>
                         
                         </ul>
                     </nav>
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                                <a class="fl mail" target="_blank" href="/" title="mail">mail</a>
                             
                                 <a class="fl github" target="_blank" href="https://github.com/jyzwf" title="github">github</a>
                             
-                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                                <a class="fl zhihu" target="_blank" href="/" title="zhihu">zhihu</a>
                             
-                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                                <a class="fl weibo" target="_blank" href="/" title="weibo">weibo</a>
                             
-                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                                <a class="fl google" target="_blank" href="/" title="google">google</a>
                             
-                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                                <a class="fl twitter" target="_blank" href="/" title="twitter">twitter</a>
                             
                                 <a class="fl facebook" target="_blank" href="/#" title="facebook">facebook</a>
                             
@@ -180,9 +180,9 @@
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/Home">博客首页</a></li>
+                    <li><a href="/">博客首页</a></li>
                 
-                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                    <li><a href="/">前端导航</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -190,17 +190,17 @@
             <nav class="header-nav">
                 <div class="social">
                     
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                        <a class="mail" target="_blank" href="/" title="mail">mail</a>
                     
                         <a class="github" target="_blank" href="https://github.com/jyzwf" title="github">github</a>
                     
-                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                        <a class="zhihu" target="_blank" href="/" title="zhihu">zhihu</a>
                     
-                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                        <a class="weibo" target="_blank" href="/" title="weibo">weibo</a>
                     
-                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                        <a class="google" target="_blank" href="/" title="google">google</a>
                     
-                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                        <a class="twitter" target="_blank" href="/" title="twitter">twitter</a>
                     
                         <a class="facebook" target="_blank" href="/#" title="facebook">facebook</a>
                     
@@ -228,7 +228,7 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a href="/2016/02/21/唠唠jQ里的on/" class="archive-article-date">
+              <a  class="archive-article-date">
       <time datetime="2016-02-21T13:15:41.000Z" itemprop="datePublished">02-21</time>
 </a>
         </div>
@@ -292,16 +292,39 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+    <a id='toTop'><i class="fa fa-arrow-up"></i></a>
+<!-- <a href="#comments"><i class="fa fa-comments-o"></i></a>-->
+    <a id='toButtom' ><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     $(document).ready(function() {
-        if ($("#comments").length < 1) {
+       /* if ($("#comments").length < 1) {
             $("#scroll > a:nth-child(2)").hide();
-        };
-    })
+        }; */
+
+        $(document).scroll(function(){
+        if($(document).scrollTop() >319){
+        	$('#scroll').fadeIn()
+        }else{
+        	$('#scroll').fadeOut()
+        }
+        })
+
+        $('#toTop').click(function(){
+        $('html,body').animate({scrollTop:'0px'},400)
+        })
+
+        $('#toButtom').click(function(){
+        $('html,body').animate({scrollTop:($(document).height() - $(window).height())+'px'},400)
+        })
+
+
+
+
+
+    }) 
+
+
 </script>
 
     <button class="hide-labels">TAG 开关</button>
