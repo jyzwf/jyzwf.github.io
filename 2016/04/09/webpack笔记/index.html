@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>策略模式(上) | 弦冰</title>
+  <title>webpack笔记 | 弦冰</title>
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="description" content="所谓策略模式就是定义一系列的算法，把他们一个个封装起来，并且他们可以互相替换">
+  <meta name="description" content="一点点记录使用webapck时候的注意点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="策略模式(上)">
-<meta property="og:url" content="http://baidu.com/2016/02/08/策略模式/index.html">
+<meta property="og:title" content="webpack笔记">
+<meta property="og:url" content="http://baidu.com/2016/04/09/webpack笔记/index.html">
 <meta property="og:site_name" content="弦冰">
-<meta property="og:description" content="所谓策略模式就是定义一系列的算法，把他们一个个封装起来，并且他们可以互相替换">
-<meta property="og:updated_time" content="2016-02-08T03:05:45.879Z">
+<meta property="og:description" content="一点点记录使用webapck时候的注意点">
+<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/webpack_dir.png">
+<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/webpack_error.png">
+<meta property="og:updated_time" content="2016-04-09T16:22:07.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="策略模式(上)">
-<meta name="twitter:description" content="所谓策略模式就是定义一系列的算法，把他们一个个封装起来，并且他们可以互相替换">
+<meta name="twitter:title" content="webpack笔记">
+<meta name="twitter:description" content="一点点记录使用webapck时候的注意点">
   
     <link rel="alternative" href="/atom.xml" title="弦冰" type="application/atom+xml">
   
@@ -212,11 +214,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-策略模式" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-webpack笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  class="article-date">
-      <time datetime="2016-02-08T02:41:24.000Z" itemprop="datePublished">2016-02-08</time>
+      <time datetime="2016-04-09T15:25:42.000Z" itemprop="datePublished">2016-04-09</time>
 </a>
     </div>
   
@@ -229,7 +231,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      策略模式(上)
+      webpack笔记
     </h1>
   
 
@@ -237,12 +239,12 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JSDesignModel/">JSDesignModel</a>
-    </div>
-
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -250,18 +252,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>所谓策略模式就是定义一系列的算法，把他们一个个封装起来，并且他们可以互相替换<a id="more"></a><br>具体来说：定义一系列的算法，把他们各自封装成策略类，算法被封装在策略类内部。客户对Context发起请求时，Context总是把请求委托给这些策略类中间的某一个进行计算</p>
-<p>接下来我们来看一个实例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//未使用策略模式计算奖金</span></span><br><span class="line"><span class="keyword">var</span> calculateBouns = <span class="function"><span class="keyword">function</span>(<span class="params">performanceLever,salary</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>( performanceLever === <span class="string">'S'</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">4</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>( performanceLever === <span class="string">'A'</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">3</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>( performanceLever === <span class="string">'B'</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">2</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( calculateBouns( <span class="string">'S'</span>,<span class="number">1000</span> ) );	<span class="comment">//4000</span></span><br><span class="line"><span class="built_in">console</span>.log( calculateBouns( <span class="string">'B'</span>,<span class="number">1000</span> ) );	<span class="comment">//2000</span></span><br><span class="line"><span class="built_in">console</span>.log( calculateBouns( <span class="string">'A'</span>,<span class="number">1000</span> ) );	<span class="comment">//3000</span></span><br></pre></td></tr></table></figure></p>
-<p>这样子写存在很多缺点：</p>
-<ul>
-<li>calculateBouns函数庞大，包含太多<code>if...else</code>  </li>
-<li>函数缺乏弹性,如果继续增加一个考核等级，就必须在函数里面添加，违反<code>开放封闭原则</code></li>
-<li>算法复用性差，很难复用到其他地方</li>
-</ul>
-<p>接下来，我们就用策略模式来重构该例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//策略类：</span></span><br><span class="line"><span class="keyword">var</span> performanceS = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	performanceS.prototype.calculate = <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">4</span>;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> performanceA = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	performanceA.prototype.calculate = <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">3</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> performanceB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	performanceB.prototype.calculate = <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用环境</span></span><br><span class="line"><span class="keyword">var</span> Bouns = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.salary = <span class="literal">null</span>;</span><br><span class="line">	<span class="keyword">this</span>.strategy = <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Bouns.prototype.setSalary = <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.salary = salary;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Bouns.prototype.setStrategy = <span class="function"><span class="keyword">function</span>(<span class="params">strategy</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.strategy = strategy;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Bouns.prototype.getBouns = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.strategy.calculate( <span class="keyword">this</span>.salary )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bouns = <span class="keyword">new</span> Bouns();</span><br><span class="line">bouns.setSalary(<span class="string">'1000'</span>);</span><br><span class="line">bouns.setStrategy( <span class="keyword">new</span> performanceS() );</span><br><span class="line"><span class="built_in">console</span>.log( bouns.getBouns() );	<span class="comment">//4000</span></span><br><span class="line"></span><br><span class="line">bouns.setStrategy( <span class="keyword">new</span> performanceA() );</span><br><span class="line"><span class="built_in">console</span>.log( bouns.getBouns() )		<span class="comment">//3000</span></span><br></pre></td></tr></table></figure></p>
-<p>首先我们需要定义一个策略类，把有关计算奖金的算法逻辑及实现封装在其中，然后需要一个环境类，来接受客户的请求，并将请求委托给策略类，从而实现功能，注意：<code>Content里面要维持对一个策略类的引用</code>    </p>
-<p>以上是基于面向对象来书写的，在JS中，函数也是对象，所以接下来我们来看看JS版本的策略模式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strategy = &#123;			<span class="comment">//通过对象字面量的形式类把各个类写在其中</span></span><br><span class="line">	<span class="string">'S'</span>:<span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary*<span class="number">4</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">'A'</span>:<span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">3</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">'B'</span>:<span class="function"><span class="keyword">function</span>(<span class="params">salary</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary * <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> calculate = <span class="function"><span class="keyword">function</span>(<span class="params">performanceLever,salary</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> strategy[performanceLever](salary);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(calculate(<span class="string">'S'</span>,<span class="number">1000</span>))	<span class="comment">//4000</span></span><br><span class="line"><span class="built_in">console</span>.log( calculate(<span class="string">'A'</span>,<span class="number">2000</span>) ) 	<span class="comment">//6000</span></span><br></pre></td></tr></table></figure></p>
-<p>好，现在我们大致了解了<code>策略模式</code>大概长成啥样了，接下来，欲知后事如何，请听下回分解^_^</p>
+        <p>一点点记录使用<code>webapck</code>时候的注意点<a id="more"></a></p>
+<h2 id="webpack_u91CCpublicPath_u76EE_u5F55"><a href="#webpack_u91CCpublicPath_u76EE_u5F55" class="headerlink" title="webpack里publicPath目录"></a>webpack里publicPath目录</h2><blockquote>
+<p><a href="http://www.jianshu.com/p/271f93b8c051" target="_blank" rel="external">http://www.jianshu.com/p/271f93b8c051</a> </p>
+</blockquote>
+<p>后来我实践了下，发现这个<code>publicPath</code>是相对于输出的<code>index.html</code>文件来确定路径的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">output:&#123;</span><br><span class="line">	path:path.join(__dirname,<span class="string">'dist'</span>),</span><br><span class="line">	publicPath:<span class="string">'../'</span>,</span><br><span class="line">	filename:<span class="string">'js/[name].js'</span>,</span><br><span class="line">	chunkFilename:<span class="string">'js/[id].chunk.js'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后得到的文件路径是这样的：</p>
+<p><code>&lt;link href=&quot;../css/index.css?796f1bbc03aeaec41991&quot; rel=&quot;stylesheet&quot;&gt;</code><br><code>&lt;script src=&quot;../js/index.js?796f1bbc03aeaec41991&quot;&gt;&lt;/script&gt;</code></p>
+<p>文件夹的目录如下：</p>
+<p><img src="http://7xqjce.com1.z0.glb.clouddn.com/webpack_dir.png" alt="webpack目录"></p>
+<p>然而，如果我把<code>publicPath</code>改为下面这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">output:&#123;</span><br><span class="line">	path:path.join(__dirname,<span class="string">'dist'</span>),</span><br><span class="line">	publicPath:<span class="string">'webpack/dist/'</span>,</span><br><span class="line">	filename:<span class="string">'js/[name].js'</span>,</span><br><span class="line">	chunkFilename:<span class="string">'js/[id].chunk.js'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这是他就会报错，显示获取不到该文件：<br><img src="http://7xqjce.com1.z0.glb.clouddn.com/webpack_error.png" alt="">;<br>注意看那个文件的路径是怎样的！<br><code>file:///F:/webpack/webpackLearn/webpack3/dist/view/webpack/dist/css/index.css?9adcd4e2701214d4168a Failed to load resource: net::ERR_FILE_NOT_FOUND</code><br>他是直接在<code>view</code>目录下开始对应我们的那个<code>publicPath</code>里设置的目录了,自然找不到该文件了。</p>
 
       
 
@@ -271,13 +273,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/08/策略模式/">策略模式(上)</a></p>
+        <p><span>本文标题:</span><a href="/2016/04/09/webpack笔记/">webpack笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
-        <p><span>发布时间:</span>2016年02月08日 - 10时41分</p>
-        <p><span>最后更新:</span>2016年02月08日 - 11时05分</p>
+        <p><span>发布时间:</span>2016年04月09日 - 23时25分</p>
+        <p><span>最后更新:</span>2016年04月10日 - 00时22分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/08/策略模式/" title="策略模式(上)">http://baidu.com/2016/02/08/策略模式/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/02/08/策略模式/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/09/webpack笔记/" title="webpack笔记">http://baidu.com/2016/04/09/webpack笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/04/09/webpack笔记/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -290,18 +292,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/02/08/策略模式（下）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/21/命令模式/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          策略模式（下）
+          命令模式
         
       </div>
     </a>
   
   
-    <a href="/2016/02/04/毛玻璃/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">毛玻璃</div>
+    <a href="/2016/04/04/在html中使用js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在html中使用js</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -312,7 +314,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack_u91CCpublicPath_u76EE_u5F55"><span class="toc-number">1.</span> <span class="toc-text">webpack里publicPath目录</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -374,7 +376,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/02/08/策略模式/" data-title="策略模式(上)" data-url="http://baidu.com/2016/02/08/策略模式/"></div>
+    <div class="ds-thread" data-thread-key="2016/04/09/webpack笔记/" data-title="webpack笔记" data-url="http://baidu.com/2016/04/09/webpack笔记/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -397,13 +399,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/08/策略模式（下）/" title="上一篇: 策略模式（下）">
+            <a href="/2016/04/21/命令模式/" title="上一篇: 命令模式">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/02/04/毛玻璃/" title="下一篇: 毛玻璃">
+            <a href="/2016/04/04/在html中使用js/" title="下一篇: 在html中使用js">
                 <i class="fa fa-angle-right"></i>
             </a>
         
