@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>状态模式 | 弦冰</title>
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="description" content="状态模式的关键是区分事物内部的状态，事物内部状态改变往往会带来事物的行为改变">
+<meta property="og:type" content="article">
+<meta property="og:title" content="状态模式">
+<meta property="og:url" content="http://baidu.com/2016/07/06/状态模式/index.html">
+<meta property="og:site_name" content="弦冰">
+<meta property="og:description" content="状态模式的关键是区分事物内部的状态，事物内部状态改变往往会带来事物的行为改变">
+<meta property="og:updated_time" content="2016-07-06T08:43:46.737Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="状态模式">
+<meta name="twitter:description" content="状态模式的关键是区分事物内部的状态，事物内部状态改变往往会带来事物的行为改变">
+  
+    <link rel="alternative" href="/atom.xml" title="弦冰" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">弦冰</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">day day up</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="/" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/jyzwf" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="/" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="/" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="/" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="/" title="twitter">twitter</a>
+                            
+                                <a class="fl facebook" target="_blank" href="/#" title="facebook">facebook</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/advance-js/" style="font-size: 10px;">advance_js</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/js疑点/" style="font-size: 10px;">js疑点</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">帅气男孩，，哈哈</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">弦冰</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">弦冰</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">day day up</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="/" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/jyzwf" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="/" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="/" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="/" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="/" title="twitter">twitter</a>
+                    
+                        <a class="facebook" target="_blank" href="/#" title="facebook">facebook</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-状态模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  class="article-date">
+      <time datetime="2016-07-06T07:38:27.000Z" itemprop="datePublished">2016-07-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      状态模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JSDesignModel/">JSDesignModel</a>
+    </div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>状态模式的关键是区分事物内部的状态，事物内部状态改变往往会带来事物的行为改变<a id="more"></a></p>
+<h2 id="u521D_u8BC6_u72B6_u6001_u6A21_u5F0F"><a href="#u521D_u8BC6_u72B6_u6001_u6A21_u5F0F" class="headerlink" title="初识状态模式"></a>初识状态模式</h2><p>状态模式的关键是把事物的每种状态封装成单独的类，跟此种状态有关的行为都被封装在这个类的内部。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 电灯程序 */</span></span><br><span class="line"><span class="keyword">var</span> light = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.state = <span class="string">'off'</span>;     <span class="comment">//给电灯设置初始状态off</span></span><br><span class="line">    <span class="keyword">this</span>.button = <span class="literal">null</span>;     <span class="comment">//电灯开关按钮</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">light.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> button = <span class="built_in">document</span>.createElement(<span class="string">'button'</span>),</span><br><span class="line">        self = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">    button.innerHTML = <span class="string">'开关'</span>;</span><br><span class="line">    <span class="keyword">this</span>.button = <span class="built_in">document</span>.body.appendChild(button);</span><br><span class="line">    <span class="keyword">this</span>.button.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        self.buttonWasPressed();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">light.prototype.buttonWasPressed = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.state === <span class="string">'off'</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'开灯'</span>);</span><br><span class="line">        <span class="keyword">this</span>.state = <span class="string">'on'</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'关灯'</span>);</span><br><span class="line">        <span class="keyword">this</span>.state = <span class="string">'off'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> light = <span class="keyword">new</span> light();</span><br><span class="line">light.init();</span><br></pre></td></tr></table></figure></p>
+<p>以上程序会在状态多的时候会变得臃肿，破坏开放封闭原则（每增加一种状态，就要改变<code>buttonWasPressed</code>里的代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 点灯程序2.0 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//OfflightState</span></span><br><span class="line"><span class="keyword">var</span> OfflightState = <span class="function"><span class="keyword">function</span>(<span class="params">light</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.light = light;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">OfflightState.prototype.buttonWasPressed = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'弱光'</span>);</span><br><span class="line">    <span class="keyword">this</span>.light.setState(<span class="keyword">this</span>.light.weakLightState);     <span class="comment">//切换状态到weakLightState</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//weakLightState</span></span><br><span class="line"><span class="keyword">var</span> WeakLightState = <span class="function"><span class="keyword">function</span>(<span class="params">light</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.light = light;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">WeakLightState.prototype.buttonWasPressed = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'强光'</span>);</span><br><span class="line">    <span class="keyword">this</span>.light.setState(<span class="keyword">this</span>.light.strongLightState);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//strongLightState</span></span><br><span class="line"><span class="keyword">var</span> StrongLightState = <span class="function"><span class="keyword">function</span>(<span class="params">light</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.light = light;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">StrongLightState.prototype.buttonWasPressed = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'关灯'</span>);</span><br><span class="line">    <span class="keyword">this</span>.light.setState(<span class="keyword">this</span>.light.offLightState);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//light</span></span><br><span class="line"><span class="keyword">var</span> light = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.offLightState = <span class="keyword">new</span> OfflightState(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>.weakLightState = <span class="keyword">new</span> WeakLightState(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>.strongLightState = <span class="keyword">new</span> StrongLightState(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>.button = <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">light.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> button = <span class="built_in">document</span>.createElement(<span class="string">'button'</span>),</span><br><span class="line">        self = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">    button.innerHTML = <span class="string">'开关'</span>;</span><br><span class="line">    <span class="keyword">this</span>.button = <span class="built_in">document</span>.body.appendChild(button);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.curState = <span class="keyword">this</span>.offLightState; <span class="comment">//设置当前状态</span></span><br><span class="line">    <span class="keyword">this</span>.button.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        self.curState.buttonWasPressed();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">light.prototype.setState = <span class="function"><span class="keyword">function</span>(<span class="params">newState</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.curState = newState;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> light = <span class="keyword">new</span> light();</span><br><span class="line">light.init();</span><br></pre></td></tr></table></figure>
+<h2 id="u72B6_u6001_u6A21_u5F0F_u7684_u5B9A_u4E49"><a href="#u72B6_u6001_u6A21_u5F0F_u7684_u5B9A_u4E49" class="headerlink" title="状态模式的定义"></a>状态模式的定义</h2>
+      
+
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/07/06/状态模式/">状态模式</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
+        <p><span>发布时间:</span>2016年07月06日 - 15时38分</p>
+        <p><span>最后更新:</span>2016年07月06日 - 16时43分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/06/状态模式/" title="状态模式">http://baidu.com/2016/07/06/状态模式/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/07/06/状态模式/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/07/07/面向对象的程序设计/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          面向对象的程序设计
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/28/引用类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">引用类型</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u521D_u8BC6_u72B6_u6001_u6A21_u5F0F"><span class="toc-number">1.</span> <span class="toc-text">初识状态模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u72B6_u6001_u6A21_u5F0F_u7684_u5B9A_u4E49"><span class="toc-number">2.</span> <span class="toc-text">状态模式的定义</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/07/06/状态模式/" data-title="状态模式" data-url="http://baidu.com/2016/07/06/状态模式/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"luums"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/07/07/面向对象的程序设计/" title="上一篇: 面向对象的程序设计">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/05/28/引用类型/" title="下一篇: 引用类型">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/图片上传加预览/">图片上传加预览</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/07/面向对象的程序设计-创建对象/">面向对象的程序设计--创建对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/07/面向对象的程序设计/">面向对象的程序设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/状态模式/">状态模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/引用类型/">引用类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/初识php/">初识php</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/命令模式/">命令模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/webpack笔记/">webpack笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/04/在html中使用js/">在html中使用js</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/javascript问题收集(1)/">javascript问题收集(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/js闭包的经典例子/">js闭包的经典例子</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/git-踩坑的一些总结/">git 踩坑的一些总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/angular之$resource/">angular之resource</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/移动端事件/">移动端事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/唠唠jQ里的on/">唠唠jQ里的on</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式（下）/">策略模式（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式/">策略模式(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/毛玻璃/">毛玻璃</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/单例模式/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/git-命令大全/">git 命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/续谈闭包/">续谈闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/闭包/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/call-AND-apply/">call AND apply</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/浅谈tjavascript里的this/">浅谈javascript里的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/css3-折角效果/">css3 折角效果</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div>
+                &copy; 2016 弦冰
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 21;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a id='toTop'><i class="fa fa-arrow-up"></i></a>
+<!-- <a href="#comments"><i class="fa fa-comments-o"></i></a>-->
+    <a id='toButtom' ><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+document.addEventListener('visibilitychange',function(){
+    document.title = document.hidden ? '客官再玩玩嘛' :'客官你好帅'
+});
+
+    $(document).ready(function() {
+       /* if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        }; */
+
+        $(document).scroll(function(){
+        if($(document).scrollTop() >319){
+        	$('#scroll').fadeIn()
+        }else{
+        	$('#scroll').fadeOut()
+        }
+        })
+
+        $('#toTop').click(function(){
+        $('html,body').animate({scrollTop:'0px'},400)
+        })
+
+        $('#toButtom').click(function(){
+        $('html,body').animate({scrollTop:($(document).height() - $(window).height())+'px'},400)
+        })
+
+
+
+
+
+    }) 
+
+
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+  </div>
+</body>
+</html>

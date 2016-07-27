@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>引用类型 | 弦冰</title>
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="description" content="本篇将记录引用类型学习过程中所学到的知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="引用类型">
+<meta property="og:url" content="http://baidu.com/2016/05/28/引用类型/index.html">
+<meta property="og:site_name" content="弦冰">
+<meta property="og:description" content="本篇将记录引用类型学习过程中所学到的知识">
+<meta property="og:updated_time" content="2016-06-05T08:02:56.587Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="引用类型">
+<meta name="twitter:description" content="本篇将记录引用类型学习过程中所学到的知识">
+  
+    <link rel="alternative" href="/atom.xml" title="弦冰" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">弦冰</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">day day up</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="/" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/jyzwf" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="/" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="/" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="/" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="/" title="twitter">twitter</a>
+                            
+                                <a class="fl facebook" target="_blank" href="/#" title="facebook">facebook</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/advance-js/" style="font-size: 10px;">advance_js</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/js疑点/" style="font-size: 10px;">js疑点</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">帅气男孩，，哈哈</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">弦冰</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">弦冰</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">day day up</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="/" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/jyzwf" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="/" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="/" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="/" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="/" title="twitter">twitter</a>
+                    
+                        <a class="facebook" target="_blank" href="/#" title="facebook">facebook</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-引用类型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  class="article-date">
+      <time datetime="2016-05-28T15:49:44.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      引用类型
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/advance-js/">advance_js</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>本篇将记录<code>引用类型</code>学习过程中所学到的知识<a id="more"></a></p>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><ol>
+<li><p>在通过对象字面量定义对象的时候，并不会调用<code>Object</code>函数 <a href="https://segmentfault.com/q/1010000004139227" target="_blank" rel="external">详情见此</a>  </p>
+</li>
+<li><p>在js中可以使用<code>方括号</code>表示法来访问对象的属性，使用时应该将要访问的属性以<code>字符串</code>的形式放在方括号中，优点如下:</p>
+<ul>
+<li>可以通过变量来访问属性</li>
+<li><p>如果属性中包含会导致语法错误的字符，或者属性名使用的是关键字或者保留字，也可以使用方括号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">person[<span class="string">"first name"</span>] = <span class="string">'zhu'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通常，除非必须使用变量访问属性，否则我们一般用点表示法</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><ol>
+<li>使用对象的字面量同样不会调用<code>Array</code>的构造函数，原因同上</li>
+<li>可以使用数组的<code>length</code>属性，从数组的末尾移除或者增加项<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">'r'</span>,<span class="string">'y'</span>,<span class="string">'b'</span>];</span><br><span class="line">colors.length = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(colors[<span class="number">2</span>])      <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="u68C0_u6D4B_u6570_u7EC4"><a href="#u68C0_u6D4B_u6570_u7EC4" class="headerlink" title="检测数组"></a>检测数组</h1><ol>
+<li>使用<code>Array.isArray()</code>来检测是否为数组，不管在不在全局执行环境中创建</li>
+</ol>
+<h1 id="u6570_u7EC4_u65B9_u6CD5"><a href="#u6570_u7EC4_u65B9_u6CD5" class="headerlink" title="数组方法"></a>数组方法</h1><ol>
+<li><code>join()</code> : 以不同的分隔符来连接数组的每一项成为字符串</li>
+<li><code>push()</code> : 在数组的最后添加项，并返回修改后的数组的长度</li>
+<li><code>pop()</code>  : 从数组的末尾移除最后一项，并返回移除的项</li>
+<li><code>shift()</code>  : 移除数组的第一项，并返回该项</li>
+<li><code>unshift()</code>  : 向数组的前端添加任意个项，并返回新数组的长度 </li>
+<li><code>reverse()</code>    :  反转数组项的顺序，返回反转后的新数组</li>
+<li><code>sort()</code>   : 接受一个比较函数，函数接受两个参数，如果第一个参数应位于第二个之前则返回一个负数，如果两个相等，返回0，反之返回一个正数</li>
+<li><code>concat()</code>   : 先创建一个数组的副本，然后将接受到的参数添加到副本的末尾，并返回最新的数组，不改变原来的数组</li>
+<li><code>slice()</code>    : 基于当前数组中的一个或多个项创建一个新数组，接受一个或两个参数，即要返回项的起始和结束位置，不影响原数组</li>
+<li><code>splice()</code>  : 会改变原来的数组<ul>
+<li>删除：可以删除任意数量的项，指定两个参数: <code>要删除的第一项的位置和要删除的项数</code></li>
+<li>插入：三个参数：<code>起始位置，0（要删除的项），要插入的项</code></li>
+<li>替换：三个参数：<code>起始位置，要删除的项，要插入的任意数量项</code></li>
+</ul>
+</li>
+<li><code>indexOf()/lastIndexOf()</code> : 接受两个参数：<code>要查找的项和（可选）表示查找起点未知的索引</code>,使用全等来比较 </li>
+<li><code>every()/filter()/forEach()/map()/some()</code>   : 迭代方法，接受两个参数：要在每一项上运行的函数(三个参数：该数组的每一项，索引，该数组)以及（可选）运行该函数的作用域对象——影响<code>this</code>的值,都不会修改数组中包含的值<ul>
+<li>every: 对数组的每一项运行给定的函数，如果该函数对每一项都返回true,就返回true</li>
+<li>filter: 对数组的每一项运行给定的函数，返回该函数会返回true的项组成的数组</li>
+<li>forEach: 对数组的每一项运行给定的函数，没有返回值</li>
+<li>map: 对数组的每一项运行给定的函数，返回每次函数调用的结果组成的数组</li>
+<li>some: 对数组的每一项运行给定的函数，如果该函数对任一项返回true,就返回true</li>
+</ul>
+</li>
+<li><code>reduce()/reduceRight()</code>  : 会迭代数组的所有项，最后构建一个最终返回的值，两个参数：一个在每一项上调用的函数（4个参数：前一个值，当前值，项的索引，数组对象。这个函数返回的任何值都会作为第一个参数传递给下一项，第一次迭代发生在数组的第二项上，因此第一个参数是数组的第一项，第二个是数组的第二项）和（可选）作为归并基础的初始值。<ul>
+<li>reduce: 从第一项开始，逐个遍历到最后</li>
+<li>reduceRight: 从最后一项开始向前遍历</li>
+</ul>
+</li>
+</ol>
+<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><p>1.<code>Date.parse()</code>    : 接受一个表示日期的字符串参数，返回相应的毫秒数</p>
+<pre><code>- ‘月/日/年’ / ‘月.日.年’ / ‘月*日*年’
+- ‘英文月名 日，年’    如`January 12,2016`
+- ‘英文星期几，英文月名 日 年 时:分:秒 时区’ 如：`Tue may 25 2016 00:54:08 GTM-0700`
+- ‘扩展格式 YYYY-MM-DDTHH:mm:ss:sssZ’
+</code></pre><ol>
+<li><p><code>Date.UTC()</code>     : 返回毫秒数，参数分别是年份，基于0的月份，月中的哪一天（1-31），小时数（0-23），分钟，秒，毫秒。只有年和月是必须的，如果没有天数，默认天数为1，其他统统为0.</p>
+<ul>
+<li><code>var y = new Date(Date.UTC(2016,5))</code></li>
+<li><code>var all = new Date(Date.UTC(2015,5,3,01,01,08))</code></li>
+</ul>
+</li>
+<li><p><code>Date.now()</code>     : 返回调用这个方法时的日期和时间的毫秒数（在不支持此方法的浏览器中，使用<code>+</code>操作符将Date对象转换为字符串同样有效果）</p>
+<ul>
+<li><code>var d = +new Date()</code></li>
+</ul>
+</li>
+<li><p><code>getTime()</code>      : 返回表示日期的毫秒数</p>
+</li>
+<li><code>setTime(毫秒)</code>    : 以毫秒数设置日期，会改变整个日期</li>
+<li><code>getDate()</code>      : 返回日期月份中的天数</li>
+<li><code>getDay()</code>       : 返回日期中星期的星期几（0代表星期日）;</li>
+</ol>
+<h2 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h2><ol>
+<li>元字符需要转义：<code>( [ { \ ^ $ | ) ? * + . ] }</code></li>
+<li>RegExp构造函数的模式的参数是字符串，所以在某些情况下要对字符进行双重转义，所有元字符必须双重转义<ul>
+<li><code>/\[bc\]at/   &quot;\\[bc\\]at&quot;</code></li>
+<li><code>/\.at/       &quot;\\.at&quot;</code></li>
+</ul>
+</li>
+<li><p>RegExp实例属性</p>
+<ul>
+<li><code>source</code>    : 正则表达式的字符串表示，按照字面量形式</li>
+<li><code>global</code></li>
+<li><code>multiline</code></li>
+<li><code>ignoreCase</code></li>
+<li><code>lastIndex</code>   : 表示开始搜索下一个匹配项的字符位置，从0开始</li>
+</ul>
+</li>
+<li><p>实例方法</p>
+<ul>
+<li><code>exec()</code></li>
+<li><code>test()</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><ol>
+<li>函数名仅仅是指向函数对象的指针</li>
+<li>没有重载</li>
+<li>函数声明提升</li>
+<li>函数作为参数传入也可以返回</li>
+<li><p>函数内部属性</p>
+<ul>
+<li><p>arguments : 有一个<code>callee</code>属性，指向拥有这个arguments对象的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line"><span class="keyword">if</span>(num&lt;=<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num-<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数对象属性<code>caller</code> : 保存着调用当前函数的引用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    inner();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(inner.caller)</span><br><span class="line">    <span class="comment">//alert(arguments.callee.caller)</span></span><br><span class="line">&#125;</span><br><span class="line">outer();        <span class="comment">//弹出outer（）的源码      outer调用了inner</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>函数的属性与方法</p>
+<ul>
+<li><code>length</code>  : 返回函数希望接受的命名参数的个数</li>
+<li><code>prototype</code>   : 不可枚举，for-in 循环不到</li>
+<li><code>call()/apply()</code></li>
+<li><code>bind()</code>  : 创建一个函数的实例，其this值会绑定到传给bind()函数的值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.color = <span class="string">'red'</span>;</span><br><span class="line"><span class="keyword">var</span> o = &#123; color : <span class="string">'lime'</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say_color</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.color)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = say_color.bind(o);</span><br><span class="line">obj();  <span class="comment">//lime</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><ol>
+<li><code>toFixed()</code>  : 按照指定的小数位返回数值的字符串表示（会四舍五入）</li>
+<li><code>toExponential()</code>    : 返回以指数表示法表示的字符串形式</li>
+<li><code>toPrecision()</code>  : 会返回以上两种的一种，接受一个参数，即表示数值的所有数字的位数，不包括指数部分</li>
+</ol>
+<p>##String</p>
+<ol>
+<li><code>charAt()</code>   : 以单字符的形式返回给定位置的字符，接受位置的数值参数</li>
+<li><code>charCodeAt()</code>   : 得到字符的编码</li>
+<li><code>concat()</code>   : 连接字符串</li>
+<li><code>slice()/substr()/substring()</code>    : 截取字符串,substr(开始位置，截取个数)，substring()会把所有的负值转换为0，而且会将小的数作为开始位置</li>
+<li><code>indexOf()/lastIndexOf()</code>    : 返回搜索给定的子字符串的位置</li>
+<li><code>trim()</code> : 删除前置和后置空格</li>
+<li><code>toLowerCase()/toUpperCase()</code></li>
+<li><code>match()/search()/replace()</code></li>
+<li><code>split()</code>    : 两个参数，第二个为指定返回的数组的大小</li>
+<li><code>localeCompare()</code>   : 比较两个字符串，以字母表来排</li>
+<li><code>fromCharCode()</code>    : 接受一个或多个字符编码，并返回一个转换后的字符串</li>
+</ol>
+
+      
+
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/05/28/引用类型/">引用类型</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
+        <p><span>发布时间:</span>2016年05月28日 - 23时49分</p>
+        <p><span>最后更新:</span>2016年06月05日 - 16时02分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/28/引用类型/" title="引用类型">http://baidu.com/2016/05/28/引用类型/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/05/28/引用类型/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/07/06/状态模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          状态模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/21/初识php/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初识php</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object"><span class="toc-number">1.</span> <span class="toc-text">Object</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array"><span class="toc-number">2.</span> <span class="toc-text">Array</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u68C0_u6D4B_u6570_u7EC4"><span class="toc-number"></span> <span class="toc-text">检测数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u6570_u7EC4_u65B9_u6CD5"><span class="toc-number"></span> <span class="toc-text">数组方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Date"><span class="toc-number">1.</span> <span class="toc-text">Date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RegExp"><span class="toc-number">2.</span> <span class="toc-text">RegExp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Function"><span class="toc-number">3.</span> <span class="toc-text">Function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number"><span class="toc-number">4.</span> <span class="toc-text">Number</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/05/28/引用类型/" data-title="引用类型" data-url="http://baidu.com/2016/05/28/引用类型/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"luums"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/07/06/状态模式/" title="上一篇: 状态模式">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/04/21/初识php/" title="下一篇: 初识php">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/图片上传加预览/">图片上传加预览</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/07/面向对象的程序设计-创建对象/">面向对象的程序设计--创建对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/07/面向对象的程序设计/">面向对象的程序设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/状态模式/">状态模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/引用类型/">引用类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/初识php/">初识php</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/命令模式/">命令模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/webpack笔记/">webpack笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/04/在html中使用js/">在html中使用js</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/javascript问题收集(1)/">javascript问题收集(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/js闭包的经典例子/">js闭包的经典例子</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/git-踩坑的一些总结/">git 踩坑的一些总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/angular之$resource/">angular之resource</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/移动端事件/">移动端事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/唠唠jQ里的on/">唠唠jQ里的on</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式（下）/">策略模式（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式/">策略模式(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/毛玻璃/">毛玻璃</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/单例模式/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/git-命令大全/">git 命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/续谈闭包/">续谈闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/闭包/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/call-AND-apply/">call AND apply</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/浅谈tjavascript里的this/">浅谈javascript里的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/css3-折角效果/">css3 折角效果</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div>
+                &copy; 2016 弦冰
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 21;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a id='toTop'><i class="fa fa-arrow-up"></i></a>
+<!-- <a href="#comments"><i class="fa fa-comments-o"></i></a>-->
+    <a id='toButtom' ><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+document.addEventListener('visibilitychange',function(){
+    document.title = document.hidden ? '客官再玩玩嘛' :'客官你好帅'
+});
+
+    $(document).ready(function() {
+       /* if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        }; */
+
+        $(document).scroll(function(){
+        if($(document).scrollTop() >319){
+        	$('#scroll').fadeIn()
+        }else{
+        	$('#scroll').fadeOut()
+        }
+        })
+
+        $('#toTop').click(function(){
+        $('html,body').animate({scrollTop:'0px'},400)
+        })
+
+        $('#toButtom').click(function(){
+        $('html,body').animate({scrollTop:($(document).height() - $(window).height())+'px'},400)
+        })
+
+
+
+
+
+    }) 
+
+
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+  </div>
+</body>
+</html>
