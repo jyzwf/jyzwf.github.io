@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>面向对象的程序设计--创建对象 | 弦冰</title>
+  <title>BOM | 弦冰</title>
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="description" content="day day up">
+  <meta name="description" content="唠唠window那些小事">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象的程序设计--创建对象">
-<meta property="og:url" content="http://baidu.com/2016/07/07/面向对象的程序设计-创建对象/index.html">
+<meta property="og:title" content="BOM">
+<meta property="og:url" content="http://baidu.com/2016/08/09/BOM/index.html">
 <meta property="og:site_name" content="弦冰">
-<meta property="og:description" content="day day up">
-<meta property="og:updated_time" content="2016-07-07T11:08:30.331Z">
+<meta property="og:description" content="唠唠window那些小事">
+<meta property="og:updated_time" content="2016-08-09T08:42:52.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象的程序设计--创建对象">
-<meta name="twitter:description" content="day day up">
+<meta name="twitter:title" content="BOM">
+<meta name="twitter:description" content="唠唠window那些小事">
   
     <link rel="alternative" href="/atom.xml" title="弦冰" type="application/atom+xml">
   
@@ -140,7 +140,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/advance-js/" style="font-size: 10px;">advance_js</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/js疑点/" style="font-size: 10px;">js疑点</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+                        <a href="/tags/advance-js/" style="font-size: 15px;">advance_js</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/js疑点/" style="font-size: 10px;">js疑点</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/条纹背景/" style="font-size: 10px;">条纹背景</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/背景与边框/" style="font-size: 20px;">背景与边框</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
                     </div>
                 </section>
                 
@@ -212,11 +212,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-面向对象的程序设计-创建对象" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-BOM" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  class="article-date">
-      <time datetime="2016-07-07T11:08:30.000Z" itemprop="datePublished">2016-07-07</time>
+      <time datetime="2016-08-09T07:12:20.000Z" itemprop="datePublished">2016-08-09</time>
 </a>
     </div>
   
@@ -229,7 +229,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      面向对象的程序设计--创建对象
+      BOM
     </h1>
   
 
@@ -239,6 +239,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/advance-js/">advance_js</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -246,7 +250,33 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p>唠唠<code>window</code>那些小事<a id="more"></a></p>
+<h2 id="u7A97_u53E3_u4F4D_u7F6E"><a href="#u7A97_u53E3_u4F4D_u7F6E" class="headerlink" title="窗口位置"></a>窗口位置</h2><ol>
+<li>使用<code>screenLeft</code>和<code>screenTop</code>表示窗口相对于屏幕左边与上边的位置，IE,Safari,Opera,Chrome均支持，</li>
+<li>firefox使用<code>screenX</code>和<code>screenY</code></li>
+<li><p>Safari和Chrome以上均支持<br>所以可以使用以下代码做兼容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> leftPos = (<span class="keyword">typeof</span> <span class="built_in">window</span>.screenLeft == <span class="string">"number"</span>) ? <span class="built_in">window</span>.screenLeft : screenX;</span><br><span class="line"><span class="keyword">var</span> topPos = (<span class="keyword">typeof</span> <span class="built_in">window</span>.screenTop == <span class="string">"number"</span>) ? <span class="built_in">window</span>.screenTop : screenY;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用moveTo和moveBy来移动窗口(可能被浏览器禁用,不适用于框架，只能对外层的window对象使用)<br> 1). moveTo接收的两个参数是新位置的x和y坐标值<br> 2). moveBy接收的两个参数是在水平和垂直方向上移动的像素数  </p>
+</li>
+</ol>
+<h2 id="u7A97_u53E3_u5927_u5C0F"><a href="#u7A97_u53E3_u5927_u5C0F" class="headerlink" title="窗口大小"></a>窗口大小</h2><ol>
+<li><code>innerWidth</code>,<code>innerHeight</code>,<code>outerWidth</code>,<code>outerHeight</code></li>
+<li><p>获取页面视口的大小</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pageWidth = <span class="built_in">window</span>.innerWidth,</span><br><span class="line">	pageHeight = <span class="built_in">window</span>.innerHeight;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> pageWidth != <span class="string">'number'</span>)&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">document</span>.compatMode == <span class="string">'CSS1Compat'</span>)&#123;			<span class="comment">//判断是否处于标准模式</span></span><br><span class="line">		pageWidth = <span class="built_in">document</span>.documentElement.clientWidth;		<span class="comment">//IE6标准模式下</span></span><br><span class="line">		pageHeight = <span class="built_in">document</span>.documentElement.clientHeight;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		pageWidth = <span class="built_in">document</span>.body.clientWidth;		<span class="comment">//混杂模式</span></span><br><span class="line">		pageHeight = <span class="built_in">document</span>.body.clientHeight;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于移动设备，<code>window.innerWidth</code>,<code>window.innerHeight</code>保存着可见视口，也就是屏幕上可见页面区域的大小</p>
+</li>
+</ol>
+<h2 id="u5BFC_u822A_u548C_u6253_u5F00_u7A97_u53E3"><a href="#u5BFC_u822A_u548C_u6253_u5F00_u7A97_u53E3" class="headerlink" title="导航和打开窗口"></a>导航和打开窗口</h2><p>window.open()方法既可以导航到一个特定的URL,也可以打开一个新的浏览器窗口。这个方法可以接收4个参数：要加载的URL、窗口目标、一个特性字符串以及一个表示新页面是否取代浏览器历史记录中当前加载页面的布尔值。通常只须传递第一个参数,最后一个参数只在不打开新窗口的情况下使用。<br>他会返回一个指向新窗口的引用，可以在上面使用<code>resizeTo()</code>,<code>moveTo()</code>等方法；<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wroxWin = <span class="built_in">window</span>.open(<span class="string">'http://www.baidu.com'</span>,<span class="string">"baidu"</span>,<span class="string">"height=400,width=400,top=10,left=10,resizeable=no,scrollbars=no,toolbar=yes"</span>);</span><br><span class="line"></span><br><span class="line">wroxWin.resizeTo(<span class="number">1000</span>,<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line">wroxWin.close();		<span class="comment">//关闭新窗口</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="u7CFB_u7EDF_u5BF9_u8BDD_u6846"><a href="#u7CFB_u7EDF_u5BF9_u8BDD_u6846" class="headerlink" title="系统对话框"></a>系统对话框</h2><p><code>alert()</code>,<code>confirm()</code>,<code>prompt()</code><br><code>prompt()</code>用于提示用户输入文本<br>接受两个参数：要显示给用户的文本提示、文本输入域的默认值（可以为空）<br>如果点击ok，返回文本输入域的值，反之关闭对话框,返回<code>null</code></p>
+<h2 id="location"><a href="#location" class="headerlink" title="location"></a>location</h2><ol>
+<li>既是window的属性，又是document的属性</li>
+<li>location.assign(url):打开一个新的URL，并产历史纪录，如果将<code>window.location</code>或<code>location.href</code>设置为url,也会以该值调用<code>assgin</code>方法</li>
+<li>location.reload(): 重新加载当前页面，如果要强制从服务器里加载，可以添加一个参数<code>true</code>，不然会从缓存中取</li>
+<li>location.replace(): 接受一个参数，即url,不会产生历史纪录，用户不能返回前一个页面</li>
+</ol>
+
       
 
     </div>
@@ -255,13 +285,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/07/07/面向对象的程序设计-创建对象/">面向对象的程序设计--创建对象</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/09/BOM/">BOM</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
-        <p><span>发布时间:</span>2016年07月07日 - 19时08分</p>
-        <p><span>最后更新:</span>2016年07月07日 - 19时08分</p>
+        <p><span>发布时间:</span>2016年08月09日 - 15时12分</p>
+        <p><span>最后更新:</span>2016年08月09日 - 16时42分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/07/面向对象的程序设计-创建对象/" title="面向对象的程序设计--创建对象">http://baidu.com/2016/07/07/面向对象的程序设计-创建对象/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/07/07/面向对象的程序设计-创建对象/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/09/BOM/" title="BOM">http://baidu.com/2016/08/09/BOM/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/08/09/BOM/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -274,18 +304,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/07/27/图片上传加预览/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/08/11/条纹背景/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          图片上传加预览
+          条纹背景
         
       </div>
     </a>
   
   
-    <a href="/2016/07/07/面向对象的程序设计/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面向对象的程序设计</div>
+    <a href="/2016/08/08/边框内圆角/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">边框内圆角</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -296,7 +326,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u7A97_u53E3_u4F4D_u7F6E"><span class="toc-number">1.</span> <span class="toc-text">窗口位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u7A97_u53E3_u5927_u5C0F"><span class="toc-number">2.</span> <span class="toc-text">窗口大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5BFC_u822A_u548C_u6253_u5F00_u7A97_u53E3"><span class="toc-number">3.</span> <span class="toc-text">导航和打开窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u7CFB_u7EDF_u5BF9_u8BDD_u6846"><span class="toc-number">4.</span> <span class="toc-text">系统对话框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#location"><span class="toc-number">5.</span> <span class="toc-text">location</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -358,7 +388,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/07/07/面向对象的程序设计-创建对象/" data-title="面向对象的程序设计--创建对象" data-url="http://baidu.com/2016/07/07/面向对象的程序设计-创建对象/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/09/BOM/" data-title="BOM" data-url="http://baidu.com/2016/08/09/BOM/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -381,18 +411,18 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/07/27/图片上传加预览/" title="上一篇: 图片上传加预览">
+            <a href="/2016/08/11/条纹背景/" title="上一篇: 条纹背景">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/07/07/面向对象的程序设计/" title="下一篇: 面向对象的程序设计">
+            <a href="/2016/08/08/边框内圆角/" title="下一篇: 边框内圆角">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/图片上传加预览/">图片上传加预览</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/07/面向对象的程序设计-创建对象/">面向对象的程序设计--创建对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/07/面向对象的程序设计/">面向对象的程序设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/状态模式/">状态模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/引用类型/">引用类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/初识php/">初识php</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/命令模式/">命令模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/webpack笔记/">webpack笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/04/在html中使用js/">在html中使用js</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/javascript问题收集(1)/">javascript问题收集(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/js闭包的经典例子/">js闭包的经典例子</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/git-踩坑的一些总结/">git 踩坑的一些总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/angular之$resource/">angular之resource</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/移动端事件/">移动端事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/唠唠jQ里的on/">唠唠jQ里的on</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式（下）/">策略模式（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式/">策略模式(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/毛玻璃/">毛玻璃</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/单例模式/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/git-命令大全/">git 命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/续谈闭包/">续谈闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/闭包/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/call-AND-apply/">call AND apply</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/浅谈tjavascript里的this/">浅谈javascript里的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/css3-折角效果/">css3 折角效果</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/条纹背景/">条纹背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/09/BOM/">BOM</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/08/边框内圆角/">边框内圆角</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/灵活的背景定位/">灵活的背景定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/05/多重边框/">多重边框</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/04/半透明边框/">半透明边框</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/图片上传加预览/">图片上传加预览</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/07/面向对象的程序设计/">面向对象的程序设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/状态模式/">状态模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/引用类型/">引用类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/初识php/">初识php</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/命令模式/">命令模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/webpack笔记/">webpack笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/04/在html中使用js/">在html中使用js</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/javascript问题收集(1)/">javascript问题收集(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/js闭包的经典例子/">js闭包的经典例子</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/git-踩坑的一些总结/">git 踩坑的一些总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/angular之$resource/">angular之resource</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/移动端事件/">移动端事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/唠唠jQ里的on/">唠唠jQ里的on</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式（下）/">策略模式（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式/">策略模式(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/毛玻璃/">毛玻璃</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/单例模式/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/git-命令大全/">git 命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/续谈闭包/">续谈闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/闭包/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/call-AND-apply/">call AND apply</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/浅谈tjavascript里的this/">浅谈javascript里的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/css3-折角效果/">css3 折角效果</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
