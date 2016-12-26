@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>续谈闭包 | 弦冰</title>
+  <title>Vue-router2.0.0设置页面title | 弦冰</title>
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="description" content="承接上篇，我们再来谈谈闭包~~">
+  <meta name="description" content="今天在用vue2.0+vue-router2.0写SPA的时候，遇到一个功能：在跳到一个文章详情页的时候，此时页面的title要是文章的title,并且这个文章的title是异步获取的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="续谈闭包">
-<meta property="og:url" content="http://baidu.com/2016/01/31/续谈闭包/index.html">
+<meta property="og:title" content="Vue-router2.0.0设置页面title">
+<meta property="og:url" content="http://baidu.com/2016/12/27/Vue-router2-0设置页面title/index.html">
 <meta property="og:site_name" content="弦冰">
-<meta property="og:description" content="承接上篇，我们再来谈谈闭包~~">
-<meta property="og:updated_time" content="2016-02-22T15:12:51.356Z">
+<meta property="og:description" content="今天在用vue2.0+vue-router2.0写SPA的时候，遇到一个功能：在跳到一个文章详情页的时候，此时页面的title要是文章的title,并且这个文章的title是异步获取的">
+<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/209445041-585bfb9676525_articlex.png">
+<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/1404433629-585bfbcd7bca4_articlex.png">
+<meta property="og:updated_time" content="2016-12-26T16:22:08.315Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="续谈闭包">
-<meta name="twitter:description" content="承接上篇，我们再来谈谈闭包~~">
+<meta name="twitter:title" content="Vue-router2.0.0设置页面title">
+<meta name="twitter:description" content="今天在用vue2.0+vue-router2.0写SPA的时候，遇到一个功能：在跳到一个文章详情页的时候，此时页面的title要是文章的title,并且这个文章的title是异步获取的">
   
     <link rel="alternative" href="/atom.xml" title="弦冰" type="application/atom+xml">
   
@@ -212,11 +214,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-续谈闭包" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Vue-router2-0设置页面title" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  class="article-date">
-      <time datetime="2016-01-31T09:05:07.000Z" itemprop="datePublished">2016-01-31</time>
+      <time datetime="2016-12-26T16:17:34.000Z" itemprop="datePublished">2016-12-27</time>
 </a>
     </div>
   
@@ -229,7 +231,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      续谈闭包
+      Vue-router2.0.0设置页面title
     </h1>
   
 
@@ -238,15 +240,11 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JSDesignModel/">JSDesignModel</a>
+    <a class="article-category-link" href="/categories/vue/">vue</a>
     </div>
 
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/疑点/">疑点</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -254,12 +252,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>承接上篇，我们再来谈谈闭包~~ <a id="more"></a></p>
-<h2 id="u547D_u4EE4_u6A21_u5F0F_u4E0E_u95ED_u5305"><a href="#u547D_u4EE4_u6A21_u5F0F_u4E0E_u95ED_u5305" class="headerlink" title="命令模式与闭包"></a>命令模式与闭包</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"X-UA-Compatible"</span> <span class="attribute">content</span>=<span class="value">"IE=edge"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">'execute'</span>&gt;</span>点我吧<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">'undo'</span>&gt;</span>点我试试<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">'js/bibao2.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>面向对象形式</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tv = &#123;</span><br><span class="line">	open: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'打开电视'</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	close: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'关闭电视'</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> OpenTvCommand = <span class="function"><span class="keyword">function</span>(<span class="params"> receiver </span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.receiver = receiver;</span><br><span class="line">&#125;</span><br><span class="line">OpenTvCommand.prototype.execute = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.receiver.open();</span><br><span class="line">&#125;</span><br><span class="line">OpenTvCommand.prototype.undo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.receiver.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> setCommand = <span class="function"><span class="keyword">function</span>(<span class="params"> command </span>)</span>&#123;</span><br><span class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'execute'</span>).onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		command.execute();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'undo'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		command.undo()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">setCommand( <span class="keyword">new</span> OpenTvCommand(tv) )</span><br></pre></td></tr></table></figure></p>
-<p>命令模式的意图是把请求封装为对象，从而分离请求的发起者与请求的接收者之间的耦合关系，在命令执行之前，可以预先往命令对象里植入命令的接收者</p>
-<p>如果需要往函数对象中预先植入命令的接受者，那么闭包可以完成</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tv = &#123;</span><br><span class="line">	open: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'打开电视'</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	close: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'关闭电视'</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> createCommand = <span class="function"><span class="keyword">function</span>(<span class="params"> receiver </span>)</span>&#123;	</span><br><span class="line">	<span class="keyword">var</span> execute = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> receiver.open();</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="keyword">var</span> undo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> receiver.close();</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		execute : execute,</span><br><span class="line">		undo : undo</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> setCommand = <span class="function"><span class="keyword">function</span>(<span class="params"> command </span>)</span>&#123;</span><br><span class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'execute'</span>).onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		command.execute();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'undo'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		command.undo()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">setCommand( createCommand(tv) )</span><br></pre></td></tr></table></figure>
+        <p>今天在用<code>vue2.0+vue-router2.0</code>写SPA的时候，遇到一个功能：<code>在跳到一个文章详情页的时候，此时页面的title要是文章的title,并且这个文章的title是异步获取的</code><a id="more"></a><br>在vue-router1.0的时候，还可以在router配置各个路由的时候给每个路由加上<code>title</code>属性，就可以改变各个页面的title了，不过到2.0的时候，，这个属性好像并不起作用了。所以必须另外想办法了<br>后来发现可以使用vue里面的指令来解决：</p>
+<p><img src="http://7xqjce.com1.z0.glb.clouddn.com/209445041-585bfb9676525_articlex.png" alt="clipboard.png"></p>
+<p>具体使用：</p>
+<p><img src="http://7xqjce.com1.z0.glb.clouddn.com/1404433629-585bfbcd7bca4_articlex.png" alt="clipboard.png"></p>
+<p>如上所述，因为<code>noteDetailData.title</code>是异步获取的，，所以指令里面使用的是<code>update</code>,<br>此外，由于其他页面还是需要原来的title,所以，离开这个页面的时候，要在指令中的<code>unbind</code>解除元素的绑定</p>
+
       
 
     </div>
@@ -268,13 +266,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/31/续谈闭包/">续谈闭包</a></p>
+        <p><span>本文标题:</span><a href="/2016/12/27/Vue-router2-0设置页面title/">Vue-router2.0.0设置页面title</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
-        <p><span>发布时间:</span>2016年01月31日 - 17时05分</p>
-        <p><span>最后更新:</span>2016年02月22日 - 23时12分</p>
+        <p><span>发布时间:</span>2016年12月27日 - 00时17分</p>
+        <p><span>最后更新:</span>2016年12月27日 - 00时22分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/31/续谈闭包/" title="续谈闭包">http://baidu.com/2016/01/31/续谈闭包/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/01/31/续谈闭包/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/12/27/Vue-router2-0设置页面title/" title="Vue-router2.0.0设置页面title">http://baidu.com/2016/12/27/Vue-router2-0设置页面title/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/12/27/Vue-router2-0设置页面title/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -287,18 +285,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/01/31/git-命令大全/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          git 命令大全
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/31/闭包/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">闭包</div>
+    <a href="/2016/12/26/css3之box-decoration-breakk/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css3之box-decoration-breakk</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -309,7 +298,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u547D_u4EE4_u6A21_u5F0F_u4E0E_u95ED_u5305"><span class="toc-number">1.</span> <span class="toc-text">命令模式与闭包</span></a></li></ol>
+    
 </div>
 <style>
     .left-col .switch-btn {
@@ -371,7 +360,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/31/续谈闭包/" data-title="续谈闭包" data-url="http://baidu.com/2016/01/31/续谈闭包/"></div>
+    <div class="ds-thread" data-thread-key="2016/12/27/Vue-router2-0设置页面title/" data-title="Vue-router2.0.0设置页面title" data-url="http://baidu.com/2016/12/27/Vue-router2-0设置页面title/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -394,13 +383,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/31/git-命令大全/" title="上一篇: git 命令大全">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/01/31/闭包/" title="下一篇: 闭包">
+            <a href="/2016/12/26/css3之box-decoration-breakk/" title="下一篇: css3之box-decoration-breakk">
                 <i class="fa fa-angle-right"></i>
             </a>
         
