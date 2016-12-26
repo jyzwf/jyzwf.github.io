@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>在html中使用js | 弦冰</title>
+  <title>Object.prototype.toString | 弦冰</title>
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="description" content="前端基础还是很重要的，无论是面试还是平时，所以从今天开始，我要慢慢去补自己以前的js基础缺陷，">
+  <meta name="description" content="Object.prototype.toString方法的原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在html中使用js">
-<meta property="og:url" content="http://baidu.com/2016/04/04/在html中使用js/index.html">
+<meta property="og:title" content="Object.prototype.toString">
+<meta property="og:url" content="http://baidu.com/2016/09/16/Object-prototype-toString/index.html">
 <meta property="og:site_name" content="弦冰">
-<meta property="og:description" content="前端基础还是很重要的，无论是面试还是平时，所以从今天开始，我要慢慢去补自己以前的js基础缺陷，">
-<meta property="og:updated_time" content="2016-04-04T16:01:11.199Z">
+<meta property="og:description" content="Object.prototype.toString方法的原理">
+<meta property="og:updated_time" content="2016-09-16T12:45:53.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在html中使用js">
-<meta name="twitter:description" content="前端基础还是很重要的，无论是面试还是平时，所以从今天开始，我要慢慢去补自己以前的js基础缺陷，">
+<meta name="twitter:title" content="Object.prototype.toString">
+<meta name="twitter:description" content="Object.prototype.toString方法的原理">
   
     <link rel="alternative" href="/atom.xml" title="弦冰" type="application/atom+xml">
   
@@ -140,7 +140,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/advance-js/" style="font-size: 15px;">advance_js</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/js疑点/" style="font-size: 10px;">js疑点</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/条纹背景/" style="font-size: 10px;">条纹背景</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/背景与边框/" style="font-size: 20px;">背景与边框</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+                        <a href="/tags/advance-js/" style="font-size: 15px;">advance_js</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/js疑点/" style="font-size: 10px;">js疑点</a> <a href="/tags/js难点/" style="font-size: 10px;">js难点</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/条纹背景/" style="font-size: 10px;">条纹背景</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 20px;">疑点</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/背景与边框/" style="font-size: 20px;">背景与边框</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
                     </div>
                 </section>
                 
@@ -212,11 +212,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-在html中使用js" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Object-prototype-toString" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  class="article-date">
-      <time datetime="2016-04-04T15:30:57.000Z" itemprop="datePublished">2016-04-04</time>
+      <time datetime="2016-09-16T11:55:08.000Z" itemprop="datePublished">2016-09-16</time>
 </a>
     </div>
   
@@ -229,7 +229,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      在html中使用js
+      Object.prototype.toString
     </h1>
   
 
@@ -237,12 +237,12 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/javascript基础/">javascript基础</a>
-    </div>
-
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js难点/">js难点</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -250,8 +250,37 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>前端基础还是很重要的，无论是面试还是平时，所以从今天开始，我要慢慢去补自己以前的js基础缺陷，<a id="more"></a></p>
-<h2 id="script_u6807_u7B7E"><a href="#script_u6807_u7B7E" class="headerlink" title="script标签"></a>script标签</h2><p>1)<code>defer</code>:表示脚本可以延迟到文档完全被解析和显示后在执行<br>2）<code>async</code>:表示应该立即下载脚本，但不妨碍页面中的其他操作,比如下载其他资源或等待加载其他脚本<br>3）script标签只要不存在<code>defer</code>和<code>async</code>属性，浏览器就会按照<code>&lt;script&gt;</code>元素在页面上出现的先后顺序依次进行解析</p>
+        <p>Object.prototype.toString方法的原理<a id="more"></a><br>判断一个对象属于哪个内置类型，我们会用以下的方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(arr)) <span class="comment">//"[object Array]"</span></span><br></pre></td></tr></table></figure></p>
+<p>在es5中，在<code>toString</code>方法被执行的时候，会执行以下步骤：</p>
+<ul>
+<li>1.如果<code>this</code>的值是<code>undefined</code>,就返回<code>[object Undefined]</code>,</li>
+<li>2.如果<code>this</code>的值是<code>null</code>,就返回<code>[object Null]</code>,</li>
+<li>3.让O成为ToObject(this)的结果</li>
+<li>4.让<code>class</code>成为O的内部属性<code>[[Class]]</code>的结果</li>
+<li>5.返回三个字符串<code>&quot;[object &quot;, class, 以及 &quot;]&quot;</code>连接后的新字符串.</li>
+</ul>
+<blockquote>
+<p>[[Class]]是一个内部属性,所有的对象(原生对象和宿主对象)都拥有该属性.在规范中,[[Class]]是这么定义的  </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>内部属性</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[[Class]]</td>
+<td style="text-align:center">一个字符串值,表明了该对象的类型.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>所有宿主对象的[[Class]]属性的值可以是除了”Arguments”, “Array”, “Boolean”, “Date”, “Error”, “Function”, “JSON”, “Math”, “Number”, “Object”, “RegExp”, “String”之外的的任何字符串.[[Class]]内部属性是引擎内部用来判断一个对象属于哪种类型的值的</p>
+</blockquote>
+<p>对象的类属性：表示对象的类型信息</p>
+<p>只有一种间接的方法查询对象的类属性，就是使用默认的<code>toString()</code>方法(继承自<code>Object.prototype</code>)，并返回如下格式的字符串：<br><code>[object class]</code><br>由于很多对象继承的<code>toString()</code>方法重写了，所以要使用上面那种形式检测</p>
 
       
 
@@ -261,13 +290,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/04/04/在html中使用js/">在html中使用js</a></p>
+        <p><span>本文标题:</span><a href="/2016/09/16/Object-prototype-toString/">Object.prototype.toString</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
-        <p><span>发布时间:</span>2016年04月04日 - 23时30分</p>
-        <p><span>最后更新:</span>2016年04月05日 - 00时01分</p>
+        <p><span>发布时间:</span>2016年09月16日 - 19时55分</p>
+        <p><span>最后更新:</span>2016年09月16日 - 20时45分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/04/04/在html中使用js/" title="在html中使用js">http://baidu.com/2016/04/04/在html中使用js/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/04/04/在html中使用js/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/16/Object-prototype-toString/" title="Object.prototype.toString">http://baidu.com/2016/09/16/Object-prototype-toString/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/09/16/Object-prototype-toString/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -280,18 +309,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/04/09/webpack笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/12/26/css3之box-decoration-breakk/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          webpack笔记
+          css3之box-decoration-breakk
         
       </div>
     </a>
   
   
-    <a href="/2016/03/23/javascript问题收集(1)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript问题收集(1)</div>
+    <a href="/2016/08/11/条纹背景/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">条纹背景</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -302,7 +331,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#script_u6807_u7B7E"><span class="toc-number">1.</span> <span class="toc-text">script标签</span></a></li></ol>
+    
 </div>
 <style>
     .left-col .switch-btn {
@@ -364,7 +393,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/04/在html中使用js/" data-title="在html中使用js" data-url="http://baidu.com/2016/04/04/在html中使用js/"></div>
+    <div class="ds-thread" data-thread-key="2016/09/16/Object-prototype-toString/" data-title="Object.prototype.toString" data-url="http://baidu.com/2016/09/16/Object-prototype-toString/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -387,18 +416,18 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/09/webpack笔记/" title="上一篇: webpack笔记">
+            <a href="/2016/12/26/css3之box-decoration-breakk/" title="上一篇: css3之box-decoration-breakk">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/03/23/javascript问题收集(1)/" title="下一篇: javascript问题收集(1)">
+            <a href="/2016/08/11/条纹背景/" title="下一篇: 条纹背景">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/条纹背景/">条纹背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/09/BOM/">BOM</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/08/边框内圆角/">边框内圆角</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/灵活的背景定位/">灵活的背景定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/05/多重边框/">多重边框</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/04/半透明边框/">半透明边框</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/图片上传加预览/">图片上传加预览</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/07/面向对象的程序设计/">面向对象的程序设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/状态模式/">状态模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/引用类型/">引用类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/初识php/">初识php</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/命令模式/">命令模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/webpack笔记/">webpack笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/04/在html中使用js/">在html中使用js</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/javascript问题收集(1)/">javascript问题收集(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/js闭包的经典例子/">js闭包的经典例子</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/git-踩坑的一些总结/">git 踩坑的一些总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/angular之$resource/">angular之resource</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/移动端事件/">移动端事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/唠唠jQ里的on/">唠唠jQ里的on</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式（下）/">策略模式（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式/">策略模式(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/毛玻璃/">毛玻璃</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/单例模式/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/git-命令大全/">git 命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/续谈闭包/">续谈闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/闭包/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/call-AND-apply/">call AND apply</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/浅谈tjavascript里的this/">浅谈javascript里的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/css3-折角效果/">css3 折角效果</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/css3之box-decoration-breakk/">css3之box-decoration-breakk</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/16/Object-prototype-toString/">Object.prototype.toString</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/条纹背景/">条纹背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/09/BOM/">BOM</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/08/边框内圆角/">边框内圆角</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/灵活的背景定位/">灵活的背景定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/05/多重边框/">多重边框</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/04/半透明边框/">半透明边框</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/图片上传加预览/">图片上传加预览</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/07/面向对象的程序设计/">面向对象的程序设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/状态模式/">状态模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/引用类型/">引用类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/初识php/">初识php</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/命令模式/">命令模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/webpack笔记/">webpack笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/javascript问题收集(1)/">javascript问题收集(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/js闭包的经典例子/">js闭包的经典例子</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/git-踩坑的一些总结/">git 踩坑的一些总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/angular之$resource/">angular之resource</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/移动端事件/">移动端事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/唠唠jQ里的on/">唠唠jQ里的on</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式（下）/">策略模式（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式/">策略模式(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/毛玻璃/">毛玻璃</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/单例模式/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/git-命令大全/">git 命令大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/续谈闭包/">续谈闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/闭包/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/call-AND-apply/">call AND apply</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/浅谈tjavascript里的this/">浅谈javascript里的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/css3-折角效果/">css3 折角效果</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
