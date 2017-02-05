@@ -2669,18 +2669,11 @@ a {
   width: 100%;
   border: 1px solid #dedede;
   margin: 20px 0;
-  color: #fff;
   border-collapse: collapse;
 }
 .article-entry table tr,
 .article-entry table td {
   height: 35px;
-}
-.article-entry table thead tr {
-  background: #2d2d2d;
-}
-.article-entry table tbody tr:hover {
-  background: #151414;
 }
 .article-entry table td,
 .article-entry table th {
