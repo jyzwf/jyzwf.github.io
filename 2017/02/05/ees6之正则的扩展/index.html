@@ -12,10 +12,8 @@
 <meta property="og:site_name" content="弦冰">
 <meta property="og:description" content="正则的扩展">
 <meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/%E6%AD%A3%E5%88%99%E7%9A%84%E6%89%A9%E5%B1%95.png">
-<meta property="og:image" content="http://blog.csdn.net/aitangyong/article/details/44000829">
-<meta property="og:image" content="https://segmentfault.com/q/1010000008255324?_ea=1594476">
 <meta property="og:image" content="http://www.jianshu.com/p/681d3e07fb0f">
-<meta property="og:updated_time" content="2017-02-05T09:45:48.565Z">
+<meta property="og:updated_time" content="2017-02-05T09:47:54.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ees6之正则的扩展">
 <meta name="twitter:description" content="正则的扩展">
@@ -279,7 +277,7 @@
 <blockquote>
 <p>当y和全局g同时出现时，全局匹配将会受限，gy组合还会对String的replace和match两个方法起作用，全局匹配g加上y之后，匹配模式更严格了一些，每一次匹配时目标必须出现在首位：</p>
 </blockquote>
-<p><img src="http://blog.csdn.net/aitangyong/article/details/44000829" alt="g修饰符"><br><img src="https://segmentfault.com/q/1010000008255324?_ea=1594476" alt="y修饰符与g修饰符的疑惑"></p>
+<p><a href="http://blog.csdn.net/aitangyong/article/details/44000829" target="_blank" rel="external">g修饰符</a><br><a href="https://segmentfault.com/q/1010000008255324?_ea=1594476" target="_blank" rel="external">y修饰符与g修饰符的疑惑</a></p>
 <h2 id="sticky_u5C5E_u6027"><a href="#sticky_u5C5E_u6027" class="headerlink" title="sticky属性"></a>sticky属性</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//表示是否设置了y修饰符。</span></span><br><span class="line"><span class="keyword">var</span> r = <span class="regexp">/aa/y</span>;</span><br><span class="line">r.sticky    <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <h2 id="flags_u5C5E_u6027"><a href="#flags_u5C5E_u6027" class="headerlink" title="flags属性"></a>flags属性</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/aaa/ig.flags   <span class="comment">//'ig'</span></span><br><span class="line"></span><br><span class="line">/aaa/ig.source  <span class="comment">//返回正则表达式的正文:'aaa'</span></span><br></pre></td></tr></table></figure>
 <h2 id="s__u4FEE_u9970_u7B26_uFF1AdotAll__u6A21_u5F0F"><a href="#s__u4FEE_u9970_u7B26_uFF1AdotAll__u6A21_u5F0F" class="headerlink" title="s 修饰符：dotAll 模式"></a>s 修饰符：dotAll 模式</h2><p>点<code>.</code>代表任意单个字符，但是不能代表<code>\n</code>、<code>\r</code>、<code>行分隔符</code>、<code>段分隔符</code>等行中止符<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/zhu.wang/.test(<span class="string">'zhu\rwang'</span>)    <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">/foo[^]bar/.test(<span class="string">'foo\nbar'</span>)    <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">/zhu.wang/s.test(<span class="string">'zhu\rwang'</span>)    <span class="comment">//false</span></span><br><span class="line"><span class="comment">//不过用babel试了下，Invalid regular expression flags&gt;&lt;</span></span><br></pre></td></tr></table></figure></p>
@@ -296,7 +294,7 @@
         <p><span>本文标题:</span><a href="/2017/02/05/ees6之正则的扩展/">ees6之正则的扩展</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
         <p><span>发布时间:</span>2017年02月05日 - 12时20分</p>
-        <p><span>最后更新:</span>2017年02月05日 - 17时45分</p>
+        <p><span>最后更新:</span>2017年02月05日 - 17时47分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/05/ees6之正则的扩展/" title="ees6之正则的扩展">http://baidu.com/2017/02/05/ees6之正则的扩展/</a>
             <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2017/02/05/ees6之正则的扩展/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
