@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>css3之box-decoration-breakk | 弦冰</title>
+  <title>es6之数值的扩展 | 弦冰</title>
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="description" content="今天读了大漠老师的&amp;lt;&amp;lt;初探box-decoration-break&amp;gt;&amp;gt;,收获不少，特此记录">
+  <meta name="description" content="数值的扩展">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css3之box-decoration-breakk">
-<meta property="og:url" content="http://baidu.com/2016/12/26/css3之box-decoration-breakk/index.html">
+<meta property="og:title" content="es6之数值的扩展">
+<meta property="og:url" content="http://baidu.com/2017/02/06/es6之数值的扩展/index.html">
 <meta property="og:site_name" content="弦冰">
-<meta property="og:description" content="今天读了大漠老师的&amp;lt;&amp;lt;初探box-decoration-break&amp;gt;&amp;gt;,收获不少，特此记录">
-<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/_0S@4%25BHQFMQ4WQE2WW1I71.png">
-<meta property="og:updated_time" content="2016-12-26T16:20:44.910Z">
+<meta property="og:description" content="数值的扩展">
+<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/%E6%95%B0%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95%20%281%29.png">
+<meta property="og:updated_time" content="2017-02-06T07:11:28.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css3之box-decoration-breakk">
-<meta name="twitter:description" content="今天读了大漠老师的&amp;lt;&amp;lt;初探box-decoration-break&amp;gt;&amp;gt;,收获不少，特此记录">
+<meta name="twitter:title" content="es6之数值的扩展">
+<meta name="twitter:description" content="数值的扩展">
   
     <link rel="alternative" href="/atom.xml" title="弦冰" type="application/atom+xml">
   
@@ -213,11 +213,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-css3之box-decoration-breakk" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-es6之数值的扩展" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  class="article-date">
-      <time datetime="2016-12-26T15:44:37.000Z" itemprop="datePublished">2016-12-26</time>
+      <time datetime="2017-02-06T06:15:33.000Z" itemprop="datePublished">2017-02-06</time>
 </a>
     </div>
   
@@ -230,7 +230,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css3之box-decoration-breakk
+      es6之数值的扩展
     </h1>
   
 
@@ -238,12 +238,12 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/CSS3-MAGIC/">CSS3_MAGIC</a>
-    </div>
-
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -251,16 +251,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>今天读了大漠老师的&lt;&lt;初探box-decoration-break&gt;&gt;,收获不少，特此记录<a id="more"></a><br><code>box-decoration-break</code>主要用来指定background、padding、border、border-image、box-shadow和clip在行内元素中如何使用<br>box-decoration-break有两个值：</p>
-<ul>
-<li><code>clone</code>：每个盒子的片段都有独立的border和padding。如果取值为clone，除了border和padding之外还有border-radius、border-image、box-shadow和background都会独立运用于元素的每个片段</li>
-<li><code>slice</code>(默认值)：取值为slice时，border和padding不会运用于元素被打断的片段中（除首行和末行），同时border-radius也只会运用于元素的四个顶角，对于打断片段之处并不会有任何的效果。而border-image和background会被运用于整个元素（全体是元素盒子是完整的）<br>代码如下：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">    <span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>box-decoration-break<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line"><span class="tag">body</span><span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">1em</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">50vw</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">100vw</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> flex</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.box</span><span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span> <span class="number">1em</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">h2</span><span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line">    <span class="tag">span</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">1.2em</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid red</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">2</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value"> lime</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">hyphens</span>:<span class="value"> auto</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">5px</span> <span class="number">10px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;</span><br><span class="line">        </span><br><span class="line">    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">span</span><span class="class">.clone</span><span class="rules">&#123;</span><br><span class="line">            <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">2px</span> solid green</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">background-color</span>:<span class="value"> orange</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#fff</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">box-decoration-break</span>:<span class="value"> clone</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">-webkit-box-decoration-break</span>:<span class="value"> clone</span></span>;</span><br><span class="line">        &#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">h2</span>&gt;</span>slice<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"demo"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">span</span>&gt;</span>到这里，Markdown 的基本语法在日常的使用中基本就没什么大问题了，只要多加练习，配合好用的工具，写起东西来肯定会行云流水。更多的语法规则，其实 Mou 的 Help 文档栗子很好，当你第一次使用 Mou 时，就会显示该文档。可以用来对用的查找和学习。<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">h2</span>&gt;</span>clone<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"demo"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"clone"</span>&gt;</span>熟悉 HTML 的同学肯定知道有序列表与无序列表的区别，在 Markdown 下，列表的显示只需要在文字前加上 - 或 * 即可变为无序列表，有序列表则直接在文字前加1. 2. 3. 符号要和文字之间加上一个字符的空格。<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+        <p>数值的扩展 <a id="more"></a><br><img src="http://7xqjce.com1.z0.glb.clouddn.com/%E6%95%B0%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95%20%281%29.png" alt=""></p>
+<h2 id="u4E8C_u8FDB_u5236_u548C_u516B_u8FDB_u5236_u8868_u793A"><a href="#u4E8C_u8FDB_u5236_u548C_u516B_u8FDB_u5236_u8868_u793A" class="headerlink" title="二进制和八进制表示"></a>二进制和八进制表示</h2><p>分别用前缀<code>0b/0B</code>和<code>0o/0O</code>表示<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0b1101</span> === <span class="number">13</span>   <span class="comment">//true</span></span><br><span class="line"><span class="number">0o777</span> === <span class="number">511</span>   <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p>将<code>0b/0o</code>前缀的字符串转换为10进制，使用<code>Number</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>(<span class="string">'0o777'</span>)     <span class="comment">//511 </span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">'0b1101'</span>)     <span class="comment">//13</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Number-isFinite/Number-isNaN"><a href="#Number-isFinite/Number-isNaN" class="headerlink" title="Number.isFinite/Number.isNaN"></a>Number.isFinite/Number.isNaN</h2><p>不进行隐式类型转换，非数值均为false<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数值是否有限</span></span><br><span class="line">    <span class="built_in">Number</span>.isFinite(<span class="number">15</span>);               <span class="comment">//true</span></span><br><span class="line">    <span class="built_in">Number</span>.isFinite(<span class="literal">Infinity</span>);         <span class="comment">//false</span></span><br><span class="line">    <span class="built_in">Number</span>.isFinite(-<span class="literal">Infinity</span>);        <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//是否为NaN</span></span><br><span class="line">    <span class="built_in">Number</span>.isNaN(<span class="literal">NaN</span>);              <span class="comment">//true</span></span><br><span class="line">    <span class="built_in">Number</span>.isNaN(<span class="literal">true</span>);              <span class="comment">//false</span></span><br><span class="line">    <span class="built_in">Number</span>.isNaN(<span class="number">12</span>);               <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Number-isInteger"><a href="#Number-isInteger" class="headerlink" title="Number.isInteger"></a>Number.isInteger</h2><p>判断是否为整数，在js内部，整数和浮点数同样存储，3和3.0视为同一个值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.isInteger(<span class="number">2.0</span>)       <span class="comment">//true      </span></span><br><span class="line"><span class="built_in">Number</span>.isInteger(<span class="number">2</span>)         <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Number</span>.isInteger(<span class="number">2.1</span>)       <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Number</span>.isInteger(<span class="string">'true2'</span>)   <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h2><p>极小的常量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.EPSILON      <span class="comment">//2.220446049250313e-16</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="u5B89_u5168_u6574_u6570_u548CNumber-isSafeInteger"><a href="#u5B89_u5168_u6574_u6570_u548CNumber-isSafeInteger" class="headerlink" title="安全整数和Number.isSafeInteger"></a>安全整数和Number.isSafeInteger</h2><p>js能准确表示的整数范围是<code>-2^53</code>到<code>2^53</code>之间，不包括两个端点，超过无法精确表示<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="built_in">Number</span>.MAX_SAFE_INTEGER === <span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">53</span>) -<span class="number">1</span></span><br><span class="line">    <span class="built_in">Number</span>.MIX_SAFE_INTEGER === -<span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">53</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Number.isSafeInteger表示是否在这个范围之内</span></span><br><span class="line"><span class="built_in">Number</span>.isSafeInteger(<span class="string">'a'</span>);      <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Number</span>.isSafeInteger(<span class="literal">Infinity</span>);     <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Math_u6269_u5C55_3B"><a href="#Math_u6269_u5C55_3B" class="headerlink" title="Math扩展;"></a>Math扩展;</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Math.trunc():取整数部分</span></span><br><span class="line">        <span class="built_in">Math</span>.trunc(<span class="number">4.1</span>);        <span class="comment">//4</span></span><br><span class="line">        <span class="built_in">Math</span>.trunc(-<span class="number">4.5</span>);       <span class="comment">//-4</span></span><br><span class="line">        <span class="built_in">Math</span>.trunc(<span class="string">'123.4654'</span>);     <span class="comment">//123</span></span><br><span class="line">        <span class="built_in">Math</span>.trunc(<span class="literal">NaN</span>);        <span class="comment">//NaN</span></span><br><span class="line">        <span class="built_in">Math</span>.trunc(<span class="string">'ZHU'</span>);      <span class="comment">//NaN</span></span><br><span class="line">        <span class="built_in">Math</span>.trunc();       <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Math.sign():判断是正数，负数，0</span></span><br><span class="line"><span class="comment">//正数：+1</span></span><br><span class="line"><span class="comment">//负数：-1</span></span><br><span class="line"><span class="comment">//0：0</span></span><br><span class="line"><span class="comment">//-0：-0</span></span><br><span class="line"><span class="comment">//其他值：如果参数与0 双等号为true，就返回0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Math</span>.sign(<span class="number">5</span>);       <span class="comment">//1</span></span><br><span class="line"><span class="built_in">Math</span>.sign(-<span class="number">5</span>);      <span class="comment">//-1</span></span><br><span class="line"><span class="built_in">Math</span>.sign(-<span class="number">0</span>);      <span class="comment">//-0</span></span><br><span class="line"><span class="built_in">Math</span>.sign(<span class="literal">false</span>);       <span class="comment">//0</span></span><br><span class="line"><span class="built_in">Math</span>.sign(<span class="string">''</span>);      <span class="comment">//0</span></span><br><span class="line"><span class="built_in">Math</span>.sign(<span class="literal">NaN</span>);     <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Math.cbrt(): 一个数的立方</span></span><br><span class="line"><span class="built_in">Math</span>.cbrt(<span class="number">8</span>); <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Math.hypot(): 所有参数的平方和的平方根</span></span><br><span class="line"><span class="built_in">Math</span>.hypot(<span class="number">3</span>,<span class="number">4</span>);        <span class="comment">//5</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5BF9_u6570_u65B9_u6CD5"><a href="#u5BF9_u6570_u65B9_u6CD5" class="headerlink" title="对数方法"></a>对数方法</h2><ul>
+<li><code>Math.expm1(x)</code>: 返回ex - 1</li>
+<li><code>Math.log1p(x)</code>: 返回1 + x的自然对数，即Math.log(1 + x)。如果x小于-1，返回NaN。</li>
+<li><code>Math.log10(x)</code>: 返回以10为底的x的对数。如果x小于0，则返回NaN。</li>
+<li><code>Math.log2(x)</code>: 返回以2为底的x的对数。如果x小于0，则返回NaN。</li>
 </ul>
-<p>效果图：<br><img src="http://7xqjce.com1.z0.glb.clouddn.com/_0S@4%25BHQFMQ4WQE2WW1I71.png" alt=""></p>
-<blockquote>
-<p>使用box-decoration-break来处理元素片段样式时，该元素必须是<code>inline</code>元素（或者display:inline的其它元素），而且该元素不能使用取值为其它值的display（比如block、inline-block、flex等），也不能运用于float和position（取值为absolute和fixed）。</p>
-</blockquote>
+<h2 id="u6307_u6570_u8FD0_u7B97_u7B26"><a href="#u6307_u6570_u8FD0_u7B97_u7B26" class="headerlink" title="指数运算符"></a>指数运算符</h2><p><code>**</code>、<code>**=</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> ** <span class="number">3</span>;     <span class="comment">//8</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">3</span>;</span><br><span class="line">a **= <span class="number">2</span> <span class="comment">//9</span></span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -270,13 +275,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/12/26/css3之box-decoration-breakk/">css3之box-decoration-breakk</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/06/es6之数值的扩展/">es6之数值的扩展</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
-        <p><span>发布时间:</span>2016年12月26日 - 23时44分</p>
-        <p><span>最后更新:</span>2016年12月27日 - 00时20分</p>
+        <p><span>发布时间:</span>2017年02月06日 - 14时15分</p>
+        <p><span>最后更新:</span>2017年02月06日 - 15时11分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/12/26/css3之box-decoration-breakk/" title="css3之box-decoration-breakk">http://baidu.com/2016/12/26/css3之box-decoration-breakk/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/12/26/css3之box-decoration-breakk/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/06/es6之数值的扩展/" title="es6之数值的扩展">http://baidu.com/2017/02/06/es6之数值的扩展/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2017/02/06/es6之数值的扩展/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -289,18 +294,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/12/27/Vue-router2-0设置页面title/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Vue-router2.0.0设置页面title
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/09/16/Object-prototype-toString/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Object.prototype.toString</div>
+    <a href="/2017/02/05/ees6之正则的扩展/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ees6之正则的扩展</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -311,7 +307,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u4E8C_u8FDB_u5236_u548C_u516B_u8FDB_u5236_u8868_u793A"><span class="toc-number">1.</span> <span class="toc-text">二进制和八进制表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number-isFinite/Number-isNaN"><span class="toc-number">2.</span> <span class="toc-text">Number.isFinite/Number.isNaN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number-isInteger"><span class="toc-number">3.</span> <span class="toc-text">Number.isInteger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number-EPSILON"><span class="toc-number">4.</span> <span class="toc-text">Number.EPSILON</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5B89_u5168_u6574_u6570_u548CNumber-isSafeInteger"><span class="toc-number">5.</span> <span class="toc-text">安全整数和Number.isSafeInteger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Math_u6269_u5C55_3B"><span class="toc-number">6.</span> <span class="toc-text">Math扩展;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5BF9_u6570_u65B9_u6CD5"><span class="toc-number">7.</span> <span class="toc-text">对数方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6307_u6570_u8FD0_u7B97_u7B26"><span class="toc-number">8.</span> <span class="toc-text">指数运算符</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -373,7 +369,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/12/26/css3之box-decoration-breakk/" data-title="css3之box-decoration-breakk" data-url="http://baidu.com/2016/12/26/css3之box-decoration-breakk/"></div>
+    <div class="ds-thread" data-thread-key="2017/02/06/es6之数值的扩展/" data-title="es6之数值的扩展" data-url="http://baidu.com/2017/02/06/es6之数值的扩展/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -396,13 +392,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/12/27/Vue-router2-0设置页面title/" title="上一篇: Vue-router2.0.0设置页面title">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/09/16/Object-prototype-toString/" title="下一篇: Object.prototype.toString">
+            <a href="/2017/02/05/ees6之正则的扩展/" title="下一篇: ees6之正则的扩展">
                 <i class="fa fa-angle-right"></i>
             </a>
         
