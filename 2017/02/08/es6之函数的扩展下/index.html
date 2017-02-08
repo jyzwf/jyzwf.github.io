@@ -3,20 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>git 踩坑的一些总结 | 弦冰</title>
+  <title>es6之函数的扩展下 | 弦冰</title>
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="description" content="这篇文章主要记录自己在学习和使用git过程中的踩得一些坑，以免日后再踩。。。">
+  <meta name="description" content="函数的扩展下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git 踩坑的一些总结">
-<meta property="og:url" content="http://baidu.com/2016/03/16/git-踩坑的一些总结/index.html">
+<meta property="og:title" content="es6之函数的扩展下">
+<meta property="og:url" content="http://baidu.com/2017/02/08/es6之函数的扩展下/index.html">
 <meta property="og:site_name" content="弦冰">
-<meta property="og:description" content="这篇文章主要记录自己在学习和使用git过程中的踩得一些坑，以免日后再踩。。。">
-<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/gitpush.png">
-<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/gitpush2.png">
-<meta property="og:updated_time" content="2016-03-16T08:30:15.780Z">
+<meta property="og:description" content="函数的扩展下">
+<meta property="og:updated_time" content="2017-02-08T07:22:09.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git 踩坑的一些总结">
-<meta name="twitter:description" content="这篇文章主要记录自己在学习和使用git过程中的踩得一些坑，以免日后再踩。。。">
+<meta name="twitter:title" content="es6之函数的扩展下">
+<meta name="twitter:description" content="函数的扩展下">
   
     <link rel="alternative" href="/atom.xml" title="弦冰" type="application/atom+xml">
   
@@ -214,11 +212,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-git-踩坑的一些总结" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-es6之函数的扩展下" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  class="article-date">
-      <time datetime="2016-03-16T08:06:35.000Z" itemprop="datePublished">2016-03-16</time>
+      <time datetime="2017-02-08T06:38:09.000Z" itemprop="datePublished">2017-02-08</time>
 </a>
     </div>
   
@@ -231,7 +229,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      git 踩坑的一些总结
+      es6之函数的扩展下
     </h1>
   
 
@@ -239,12 +237,12 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/git/">git</a>
-    </div>
-
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -252,8 +250,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>这篇文章主要记录自己在学习和使用<code>git</code>过程中的踩得一些坑，以免日后再踩。。。<a id="more"></a></p>
-<h1 id="1_29_3Agit_push_-f_origin_master"><a href="#1_29_3Agit_push_-f_origin_master" class="headerlink" title="1):git push -f origin master"></a>1):git push -f origin master</h1><p>在继<code>git add .</code>、<code>git commit -m &quot;...&quot;</code>之后，我在命令行里面输入<code>git remote add origin https://git.oschina.net/ngEcho/justTest.git</code>，然后在进行<code>git push origin master</code>,可是出现了如下的错误：<br><img src="http://7xqjce.com1.z0.glb.clouddn.com/gitpush.png" alt="errorImg">;<br>真心令人捉急，，然后上网查，终于找到解决办法了，只要输入<code>git push -f origin master</code>就妥了<br><img src="http://7xqjce.com1.z0.glb.clouddn.com/gitpush2.png" alt="successImg"><br>么么哒</p>
+        <p>函数的扩展下<a id="more"></a></p>
+<h2 id="u7BAD_u5934_u51FD_u6570"><a href="#u7BAD_u5934_u51FD_u6570" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>与变量解构连用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = (&#123;name,age&#125;) =&gt; name +<span class="string">'/'</span>+age;</span><br><span class="line"><span class="comment">/*</span><br><span class="line">var s = function s(_ref) &#123;</span><br><span class="line">  var name = _ref.name,</span><br><span class="line">      age = _ref.age;</span><br><span class="line">  return name + '/' + age;</span><br><span class="line">&#125;;</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure></p>
+<p>注意点：</p>
+<ol>
+<li>函数体内的<code>this</code>是<code>定义时</code>所在的对象，而不是<code>使用时</code>所在的对象</li>
+<li>不可用于构造函数，不可使用<code>new</code>命令，否则报错</li>
+<li>不可使用<code>arguments</code>对象，在该对象在函数体内不存在，可以用<code>Rest</code>参数代替</li>
+<li>不可使用<code>yield</code>命令，不能用作<code>Generator</code>函数</li>
+<li><code>super</code>、<code>new.target</code>不存在，指向外层函数的对应变量</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = (&#123;name,age&#125;) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span><br><span class="line">    Arguments [</span><br><span class="line">      Object &#123;</span><br><span class="line">        "clear": [Function anonymous],</span><br><span class="line">        "debug": [Function anonymous],</span><br><span class="line">        "error": [Function anonymous],</span><br><span class="line">        "info": [Function anonymous],</span><br><span class="line">        "log": [Function anonymous]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  */</span></span><br><span class="line">&#125;</span><br><span class="line">s(&#123;</span><br><span class="line">  name:<span class="string">'zhu'</span>,</span><br><span class="line">  age:<span class="number">3</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line">    var _arguments = arguments;</span><br><span class="line">    var s = function s(_ref) &#123;</span><br><span class="line">      var name = _ref.name,</span><br><span class="line">          age = _ref.age;</span><br><span class="line">    </span><br><span class="line">      console.log(_arguments);</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    s(&#123;</span><br><span class="line">      name: 'zhu',</span><br><span class="line">      age: 3</span><br><span class="line">    &#125;);</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//this</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'id:'</span>, <span class="keyword">this</span>.id);</span><br><span class="line">  &#125;, <span class="number">100</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line">    function foo() &#123;</span><br><span class="line">      var _this = this;</span><br><span class="line">      setTimeout(function () &#123;</span><br><span class="line">        console.log('id:', _this.id);</span><br><span class="line">      &#125;, 100);</span><br><span class="line">    &#125;</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//很重要</span></span><br><span class="line"><span class="comment">//箭头函数里面根本没有自己的this，而是引用外层的this。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ()=&gt;&#123;</span><br><span class="line">        <span class="keyword">return</span> ()=&gt;&#123;</span><br><span class="line">            <span class="keyword">return</span> ()=&gt;&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'id'</span>,<span class="keyword">this</span>.id)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f = foo.call(&#123;id:<span class="number">1</span>&#125;);</span><br><span class="line"><span class="keyword">var</span> t1 = f.call(&#123;id: <span class="number">2</span>&#125;)()(); <span class="comment">// id: 1</span></span><br><span class="line"><span class="keyword">var</span> t2 = f().call(&#123;id: <span class="number">3</span>&#125;)(); <span class="comment">// id: 1</span></span><br><span class="line"><span class="keyword">var</span> t3 = f()().call(&#123;id: <span class="number">4</span>&#125;); <span class="comment">// id: 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="u7ED1_u5B9Athis"><a href="#u7ED1_u5B9Athis" class="headerlink" title="绑定this"></a>绑定<code>this</code></h2><p>函数绑定运算符是（<code>::</code>），双冒号<code>左边是一个对象</code>，<code>右边是一个函数</code>。该运算符会自动将左边的对象，作为上下文环境（即this对象），绑定到右边的函数上面。<br>如果<code>双冒号左边为空</code>，右边是一个对象的方法，则等于将该方法绑定在<code>该对象</code>上面。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.id)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> id = <span class="string">'zhu'</span>;</span><br><span class="line"><span class="keyword">var</span> f = &#123;id:<span class="string">'w'</span>&#125;;</span><br><span class="line">foo::bar();     <span class="comment">//不过babel报错了</span></span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -263,13 +272,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/16/git-踩坑的一些总结/">git 踩坑的一些总结</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/08/es6之函数的扩展下/">es6之函数的扩展下</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
-        <p><span>发布时间:</span>2016年03月16日 - 16时06分</p>
-        <p><span>最后更新:</span>2016年03月16日 - 16时30分</p>
+        <p><span>发布时间:</span>2017年02月08日 - 14时38分</p>
+        <p><span>最后更新:</span>2017年02月08日 - 15时22分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/16/git-踩坑的一些总结/" title="git 踩坑的一些总结">http://baidu.com/2016/03/16/git-踩坑的一些总结/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/03/16/git-踩坑的一些总结/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/08/es6之函数的扩展下/" title="es6之函数的扩展下">http://baidu.com/2017/02/08/es6之函数的扩展下/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2017/02/08/es6之函数的扩展下/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -282,18 +291,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/03/23/js闭包的经典例子/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          js闭包的经典例子
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/28/angular之$resource/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">angular之resource</div>
+    <a href="/2017/02/08/es6之函数的扩展上/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">es6之函数的扩展上</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -304,7 +304,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1_29_3Agit_push_-f_origin_master"><span class="toc-number">1.</span> <span class="toc-text">1):git push -f origin master</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u7BAD_u5934_u51FD_u6570"><span class="toc-number">1.</span> <span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u7ED1_u5B9Athis"><span class="toc-number">2.</span> <span class="toc-text">绑定this</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -366,7 +366,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/16/git-踩坑的一些总结/" data-title="git 踩坑的一些总结" data-url="http://baidu.com/2016/03/16/git-踩坑的一些总结/"></div>
+    <div class="ds-thread" data-thread-key="2017/02/08/es6之函数的扩展下/" data-title="es6之函数的扩展下" data-url="http://baidu.com/2017/02/08/es6之函数的扩展下/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -389,13 +389,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/23/js闭包的经典例子/" title="上一篇: js闭包的经典例子">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/02/28/angular之$resource/" title="下一篇: angular之resource">
+            <a href="/2017/02/08/es6之函数的扩展上/" title="下一篇: es6之函数的扩展上">
                 <i class="fa fa-angle-right"></i>
             </a>
         

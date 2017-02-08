@@ -3,20 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>git 踩坑的一些总结 | 弦冰</title>
+  <title>es6之函数的扩展上 | 弦冰</title>
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="description" content="这篇文章主要记录自己在学习和使用git过程中的踩得一些坑，以免日后再踩。。。">
+  <meta name="description" content="函数的扩展上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git 踩坑的一些总结">
-<meta property="og:url" content="http://baidu.com/2016/03/16/git-踩坑的一些总结/index.html">
+<meta property="og:title" content="es6之函数的扩展上">
+<meta property="og:url" content="http://baidu.com/2017/02/08/es6之函数的扩展上/index.html">
 <meta property="og:site_name" content="弦冰">
-<meta property="og:description" content="这篇文章主要记录自己在学习和使用git过程中的踩得一些坑，以免日后再踩。。。">
-<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/gitpush.png">
-<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/gitpush2.png">
-<meta property="og:updated_time" content="2016-03-16T08:30:15.780Z">
+<meta property="og:description" content="函数的扩展上">
+<meta property="og:image" content="http://7xqjce.com1.z0.glb.clouddn.com/%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95.png">
+<meta property="og:updated_time" content="2017-02-08T07:33:38.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git 踩坑的一些总结">
-<meta name="twitter:description" content="这篇文章主要记录自己在学习和使用git过程中的踩得一些坑，以免日后再踩。。。">
+<meta name="twitter:title" content="es6之函数的扩展上">
+<meta name="twitter:description" content="函数的扩展上">
   
     <link rel="alternative" href="/atom.xml" title="弦冰" type="application/atom+xml">
   
@@ -214,11 +213,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-git-踩坑的一些总结" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-es6之函数的扩展上" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  class="article-date">
-      <time datetime="2016-03-16T08:06:35.000Z" itemprop="datePublished">2016-03-16</time>
+      <time datetime="2017-02-08T04:42:45.000Z" itemprop="datePublished">2017-02-08</time>
 </a>
     </div>
   
@@ -231,7 +230,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      git 踩坑的一些总结
+      es6之函数的扩展上
     </h1>
   
 
@@ -239,12 +238,12 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/git/">git</a>
-    </div>
-
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -252,8 +251,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>这篇文章主要记录自己在学习和使用<code>git</code>过程中的踩得一些坑，以免日后再踩。。。<a id="more"></a></p>
-<h1 id="1_29_3Agit_push_-f_origin_master"><a href="#1_29_3Agit_push_-f_origin_master" class="headerlink" title="1):git push -f origin master"></a>1):git push -f origin master</h1><p>在继<code>git add .</code>、<code>git commit -m &quot;...&quot;</code>之后，我在命令行里面输入<code>git remote add origin https://git.oschina.net/ngEcho/justTest.git</code>，然后在进行<code>git push origin master</code>,可是出现了如下的错误：<br><img src="http://7xqjce.com1.z0.glb.clouddn.com/gitpush.png" alt="errorImg">;<br>真心令人捉急，，然后上网查，终于找到解决办法了，只要输入<code>git push -f origin master</code>就妥了<br><img src="http://7xqjce.com1.z0.glb.clouddn.com/gitpush2.png" alt="successImg"><br>么么哒</p>
+        <p>函数的扩展上<a id="more"></a><br><img src="http://7xqjce.com1.z0.glb.clouddn.com/%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95.png" alt=""></p>
+<h2 id="u51FD_u6570_u53C2_u6570_u7684_u9ED8_u8BA4_u503C"><a href="#u51FD_u6570_u53C2_u6570_u7684_u9ED8_u8BA4_u503C" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x,y='zhu'</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x,y)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(<span class="string">'Hello'</span>,<span class="string">''</span>);    <span class="comment">//Hello ''</span></span><br><span class="line">log(<span class="string">'Hello'</span>);       <span class="comment">//'Hello zhu'</span></span><br></pre></td></tr></table></figure>
+<p>如果参数是变量，那么每次都是重新计算默认值表达式的值，默认值是<code>惰性求值</code>的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">p=x+1</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(p)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();  <span class="comment">//11</span></span><br><span class="line">x=<span class="number">100</span>;</span><br><span class="line">foo();  <span class="comment">//101</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line">var x = 10;</span><br><span class="line">function foo() &#123;</span><br><span class="line">        var p = arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0]: x + 1;</span><br><span class="line">        console.log(p);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">foo();</span><br><span class="line">x = 100;</span><br><span class="line">foo();</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="u4E0E_u89E3_u6784_u8D4B_u503C_u9ED8_u8BA4_u503C_u7ED3_u5408_u4F7F_u7528"><a href="#u4E0E_u89E3_u6784_u8D4B_u503C_u9ED8_u8BA4_u503C_u7ED3_u5408_u4F7F_u7528" class="headerlink" title="与解构赋值默认值结合使用"></a>与解构赋值默认值结合使用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">&#123;x,y=9&#125;</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x,y)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f();    <span class="comment">//Cannot read property 'x' of undefined</span></span><br><span class="line">f(&#123;&#125;);  <span class="comment">//undefined 9</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//*******************************</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">url,&#123;m='get'&#125;</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(m)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(<span class="string">'baidu'</span>,&#123;&#125;); <span class="comment">//"get"</span></span><br><span class="line">f(<span class="string">'baidu'</span>);     <span class="comment">//Cannot read property 'm' of undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line">function f(url, _ref) &#123;</span><br><span class="line">    var _ref$m = _ref.m,</span><br><span class="line">        m = _ref$m === undefined ? 'get' : _ref$m;</span><br><span class="line"></span><br><span class="line">    console.log(m);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f('baidu', &#123;&#125;);</span><br><span class="line">f('baidu');</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//双重默认值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">url,&#123;m='get'&#125; = &#123;&#125;</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(m)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(<span class="string">'baidu'</span>,&#123;&#125;); <span class="comment">//'get'</span></span><br><span class="line">f(<span class="string">'baidu'</span>);     <span class="comment">//'get'</span></span><br><span class="line"><span class="comment">/*</span><br><span class="line">function f(url) &#123;</span><br><span class="line">    var _ref = arguments.length &gt; 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : &#123;&#125;,</span><br><span class="line">    _ref$m = _ref.m,</span><br><span class="line">    m = _ref$m === undefined ? 'get' : _ref$m;</span><br><span class="line"></span><br><span class="line">    console.log(m);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f('baidu', &#123;&#125;);</span><br><span class="line">f('baidu');</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="u53C2_u6570_u9ED8_u8BA4_u503C_u7684_u4F4D_u7F6E"><a href="#u53C2_u6570_u9ED8_u8BA4_u503C_u7684_u4F4D_u7F6E" class="headerlink" title="参数默认值的位置"></a>参数默认值的位置</h2><p>定义了默认值的参数，应该是函数的<code>尾参数</code>,如果非尾部的参数设置默认值，实际上这个参数是没法省略的。必须显式设为<code>undefined</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x, y = 5, z</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y, z];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() <span class="comment">// [undefined, 5, undefined]</span></span><br><span class="line">f(<span class="number">1</span>) <span class="comment">// [1, 5, undefined]</span></span><br><span class="line">f(<span class="number">1</span>, ,<span class="number">2</span>) <span class="comment">// 报错</span></span><br><span class="line">f(<span class="number">1</span>, <span class="literal">undefined</span>, <span class="number">2</span>) <span class="comment">// [1, 5, 2]</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="u51FD_u6570_u7684_length__u5C5E_u6027"><a href="#u51FD_u6570_u7684_length__u5C5E_u6027" class="headerlink" title="函数的 length 属性"></a>函数的 length 属性</h2><p>指定了默认值后，<code>length</code>，将返回没有指定默认值的参数个数</p>
+<h2 id="u5E94_u7528"><a href="#u5E94_u7528" class="headerlink" title="应用"></a>应用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throwErr</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'缺少第一个参数'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">m = throwErr(</span>))</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> m</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(f())</span><br></pre></td></tr></table></figure>
+<h2 id="u66FF_u4EE3_u6570_u7EC4_u7684apply_u65B9_u6CD5"><a href="#u66FF_u4EE3_u6570_u7EC4_u7684apply_u65B9_u6CD5" class="headerlink" title="替代数组的apply方法"></a>替代数组的apply方法</h2><p>扩展运算符可以展开数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x,...values</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(values)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line">f(...arr);  <span class="comment">//[2,3,4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x,...values</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(values)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line">f.apply(<span class="literal">null</span>,arr)</span><br></pre></td></tr></table></figure></p>
+<p>扩展运算符的应用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1: 合并数组</span></span><br><span class="line"><span class="keyword">var</span> value = [<span class="string">'hello'</span>];</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,...value]; <span class="comment">//[1,2,'helo']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 与解构赋值结合</span></span><br><span class="line">[a,...rest] = list</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 函数返回值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//4. 字符串</span></span><br><span class="line"><span class="built_in">console</span>.log(...<span class="string">'value'</span>);    <span class="comment">//"v" "a" "l" "u" "e"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//5. Map和Set结构，Generator函数</span></span><br><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([</span><br><span class="line">  [<span class="number">1</span>,<span class="string">'o'</span>],</span><br><span class="line">  [<span class="number">2</span>,<span class="string">'w'</span>],</span><br><span class="line">  [<span class="number">3</span>,<span class="string">'d'</span>]</span><br><span class="line"> ]);</span><br><span class="line">  </span><br><span class="line"> <span class="built_in">console</span>.log([...map.keys()]);  <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -263,13 +269,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/16/git-踩坑的一些总结/">git 踩坑的一些总结</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/08/es6之函数的扩展上/">es6之函数的扩展上</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
-        <p><span>发布时间:</span>2016年03月16日 - 16时06分</p>
-        <p><span>最后更新:</span>2016年03月16日 - 16时30分</p>
+        <p><span>发布时间:</span>2017年02月08日 - 12时42分</p>
+        <p><span>最后更新:</span>2017年02月08日 - 15时33分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/16/git-踩坑的一些总结/" title="git 踩坑的一些总结">http://baidu.com/2016/03/16/git-踩坑的一些总结/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2016/03/16/git-踩坑的一些总结/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/08/es6之函数的扩展上/" title="es6之函数的扩展上">http://baidu.com/2017/02/08/es6之函数的扩展上/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2017/02/08/es6之函数的扩展上/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -282,18 +288,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/03/23/js闭包的经典例子/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/08/es6之函数的扩展下/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          js闭包的经典例子
+          es6之函数的扩展下
         
       </div>
     </a>
   
   
-    <a href="/2016/02/28/angular之$resource/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">angular之resource</div>
+    <a href="/2017/02/07/es6之数组的扩展/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">es6之数组的扩展</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -304,7 +310,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1_29_3Agit_push_-f_origin_master"><span class="toc-number">1.</span> <span class="toc-text">1):git push -f origin master</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u51FD_u6570_u53C2_u6570_u7684_u9ED8_u8BA4_u503C"><span class="toc-number">1.</span> <span class="toc-text">函数参数的默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u4E0E_u89E3_u6784_u8D4B_u503C_u9ED8_u8BA4_u503C_u7ED3_u5408_u4F7F_u7528"><span class="toc-number">2.</span> <span class="toc-text">与解构赋值默认值结合使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u53C2_u6570_u9ED8_u8BA4_u503C_u7684_u4F4D_u7F6E"><span class="toc-number">3.</span> <span class="toc-text">参数默认值的位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u51FD_u6570_u7684_length__u5C5E_u6027"><span class="toc-number">4.</span> <span class="toc-text">函数的 length 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5E94_u7528"><span class="toc-number">5.</span> <span class="toc-text">应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u66FF_u4EE3_u6570_u7EC4_u7684apply_u65B9_u6CD5"><span class="toc-number">6.</span> <span class="toc-text">替代数组的apply方法</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -366,7 +372,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/16/git-踩坑的一些总结/" data-title="git 踩坑的一些总结" data-url="http://baidu.com/2016/03/16/git-踩坑的一些总结/"></div>
+    <div class="ds-thread" data-thread-key="2017/02/08/es6之函数的扩展上/" data-title="es6之函数的扩展上" data-url="http://baidu.com/2017/02/08/es6之函数的扩展上/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -389,13 +395,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/23/js闭包的经典例子/" title="上一篇: js闭包的经典例子">
+            <a href="/2017/02/08/es6之函数的扩展下/" title="上一篇: es6之函数的扩展下">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/02/28/angular之$resource/" title="下一篇: angular之resource">
+            <a href="/2017/02/07/es6之数组的扩展/" title="下一篇: es6之数组的扩展">
                 <i class="fa fa-angle-right"></i>
             </a>
         
