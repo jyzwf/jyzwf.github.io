@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>es6之对象的扩展 | 弦冰</title>
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="description" content="对象的扩展">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6之对象的扩展">
+<meta property="og:url" content="http://baidu.com/2017/02/09/es6之对象的扩展/index.html">
+<meta property="og:site_name" content="弦冰">
+<meta property="og:description" content="对象的扩展">
+<meta property="og:updated_time" content="2017-02-09T08:30:50.362Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6之对象的扩展">
+<meta name="twitter:description" content="对象的扩展">
+  
+    <link rel="alternative" href="/atom.xml" title="弦冰" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">弦冰</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">day day up</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="/" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/jyzwf" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="/" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="/" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="/" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="/" title="twitter">twitter</a>
+                            
+                                <a class="fl facebook" target="_blank" href="/#" title="facebook">facebook</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/advance-js/" style="font-size: 13.33px;">advance_js</a> <a href="/tags/cssSkill/" style="font-size: 10px;">cssSkill</a> <a href="/tags/es6/" style="font-size: 20px;">es6</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/js疑点/" style="font-size: 10px;">js疑点</a> <a href="/tags/js难点/" style="font-size: 10px;">js难点</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/条纹背景/" style="font-size: 10px;">条纹背景</a> <a href="/tags/注意点/" style="font-size: 10px;">注意点</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/疑点/" style="font-size: 16.67px;">疑点</a> <a href="/tags/积累/" style="font-size: 10px;">积累</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/背景与边框/" style="font-size: 16.67px;">背景与边框</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">帅气男孩，，哈哈</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">弦冰</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">弦冰</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">day day up</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="/" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/jyzwf" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="/" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="/" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="/" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="/" title="twitter">twitter</a>
+                    
+                        <a class="facebook" target="_blank" href="/#" title="facebook">facebook</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-es6之对象的扩展" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  class="article-date">
+      <time datetime="2017-02-09T05:03:10.000Z" itemprop="datePublished">2017-02-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      es6之对象的扩展
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>对象的扩展<a id="more"></a></p>
+<h2 id="u5C5E_u6027_u540D_u8868_u8FBE_u5F0F"><a href="#u5C5E_u6027_u540D_u8868_u8FBE_u5F0F" class="headerlink" title="属性名表达式"></a>属性名表达式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.标识符作为属性名</span></span><br><span class="line">obj.z = <span class="string">'1'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.表达式作为属性名，放在方括号内</span></span><br><span class="line">obj[<span class="string">'z'</span>+<span class="string">'f'</span>] = <span class="number">123</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对象字面量</span></span><br><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="keyword">let</span> p = <span class="string">'zhu'</span>,</span><br><span class="line">    w = <span class="string">'wang'</span>;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    [p]:<span class="string">'123'</span>,  <span class="comment">//'zhu'</span></span><br><span class="line">    [p+w]:<span class="number">232</span>,  <span class="comment">//'zhuwang':232</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性名表达式与简洁表示法，不能同时使用</span></span><br><span class="line"><span class="comment">//报错</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="string">'a'</span>,</span><br><span class="line">    b = <span class="string">'b'</span>,</span><br><span class="line">    z = &#123;[a]&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//成功</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="string">'a'</span>,</span><br><span class="line">    b = <span class="string">'b'</span>,</span><br><span class="line">    z = &#123;[a]:<span class="string">'b'</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>属性名如果时一个对象，默认会自动将对象转换为字符串<code>[object Object]</code>;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> o1 = &#123;a:<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> o2 = &#123;b:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    [o1]:<span class="string">'A'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="comment">/*</span><br><span class="line">    Object &#123;</span><br><span class="line">      "[object Object]": "A"</span><br><span class="line">    &#125;</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="u65B9_u6CD5_u7684name_u5C5E_u6027"><a href="#u65B9_u6CD5_u7684name_u5C5E_u6027" class="headerlink" title="方法的name属性"></a>方法的name属性</h2><p>如果对象的方法是一个<code>Symbol</code>,那么<code>name</code>为这个Symbol值的描述<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> k1 = <span class="built_in">Symbol</span>(<span class="string">'desc'</span>),</span><br><span class="line">      k2 = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    [k1]()&#123;&#125;,</span><br><span class="line">    [k2]()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj[k1].name;   <span class="comment">//""</span></span><br><span class="line">obj[k2].name;   <span class="comment">//""   </span></span><br><span class="line"><span class="comment">//babel上居然都是""</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is"></a>Object.is</h2><p>用来比较两个值是否严格相等<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.is(&#123;&#125;,&#123;&#125;));  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.is(<span class="literal">NaN</span>,<span class="literal">NaN</span>));    <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.is(<span class="number">0</span>,<span class="literal">false</span>));    <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.is(+<span class="number">0</span>,-<span class="number">0</span>));  <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h2><p>用于对象的合并，将源对象的所有<code>可枚举</code>的属性复制到目标对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> target = &#123;</span><br><span class="line">    z:<span class="string">'zhu'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> source1 = &#123;</span><br><span class="line">    w:<span class="string">'wang'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> source2 = &#123;</span><br><span class="line">    f:<span class="string">'fei'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.assign(target,source1,source2);</span><br><span class="line">target; </span><br><span class="line"><span class="comment">/*Object &#123;</span><br><span class="line">    "f": "fei",</span><br><span class="line">    "w": "wang",</span><br><span class="line">    "z": "zhu"</span><br><span class="line">&#125;*/</span></span><br></pre></td></tr></table></figure></p>
+<p>如果只有一个参数，<code>Object.assign</code>直接返回该参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;a:<span class="number">1</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.is(<span class="built_in">Object</span>.assign(obj),obj);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果该参数不是对象，就先转为对象，null和undefined不能转为对象，所以以他们为参数会报错</span></span><br><span class="line"><span class="built_in">Object</span>.assign(<span class="literal">undefined</span>)</span><br><span class="line"><span class="built_in">Object</span>.assign(<span class="literal">null</span>);<span class="comment">//Cannot convert undefined or null to object</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果非对象参数出现在源对象的位置，这些参数会先转换为对象，如果无法转换，就会跳过</span></span><br><span class="line"><span class="keyword">let</span> o = &#123;z:<span class="string">'zhu'</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.is(<span class="built_in">Object</span>.assign(o,<span class="literal">undefined</span>),o);    <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="built_in">Object</span>.assign(o,<span class="literal">null</span>),o); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//字符串会以数组的形式拷入目标对象</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'zwf'</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span>,</span><br><span class="line">    num = <span class="number">123</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.assign(&#123;&#125;,name,b,num);</span><br><span class="line">obj;</span><br><span class="line"><span class="comment">/*</span><br><span class="line">    Object &#123;</span><br><span class="line">      "0": "z",</span><br><span class="line">      "1": "w",</span><br><span class="line">      "2": "f"</span><br><span class="line">    &#125;</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>(<span class="literal">true</span>);   <span class="comment">// &#123;[[PrimitiveValue]]: true&#125;</span></span><br><span class="line"><span class="built_in">Object</span>(<span class="number">123</span>);    <span class="comment">// &#123;[[PrimitiveValue]]: 123&#125;</span></span><br><span class="line"><span class="built_in">Object</span>(<span class="string">'zwf'</span>);  <span class="comment">//String &#123;0: "a", 1: "b", 2: "c", length: 3, [[PrimitiveValue]]: "abc"&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//所以只有字符串是可枚举的,其他都包含在原始属性[[PrimitiveValue]]里面</span></span><br></pre></td></tr></table></figure></p>
+<p><code>Object,assign</code>只是浅拷贝，只拷贝源对象的自身属性，不拷贝继承属性和不可枚举属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//源对象某个值是对象，那么目标对象拷贝到的只是这个对象的引用</span></span><br><span class="line">    <span class="keyword">var</span> o1 = &#123;a:&#123;b:<span class="number">1</span>&#125;&#125;;</span><br><span class="line">    <span class="keyword">var</span> o2 = <span class="built_in">Object</span>.assign(&#123;&#125;,o1);</span><br><span class="line">    o1.a.b = <span class="string">'zhu'</span>;</span><br><span class="line">    o2.a.b  <span class="comment">//"zhu"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//处理数组的时候会把数组当做对象</span></span><br><span class="line"><span class="built_in">Object</span>.assign([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>]);   <span class="comment">//[4,5,3]</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5C5E_u6027_u7684_u53EF_u679A_u4E3E_u6027"><a href="#u5C5E_u6027_u7684_u53EF_u679A_u4E3E_u6027" class="headerlink" title="属性的可枚举性"></a>属性的可枚举性</h2><p>对象的每个属性都有一个描述对象，用来控制属性的行为,<code>Object.getOwnPropertyDescriptor</code>可以取得该属性的描述对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;f:<span class="string">'zhu'</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(obj,<span class="string">'f'</span>);</span><br><span class="line"><span class="comment">/*</span><br><span class="line">    Object &#123;</span><br><span class="line">      "configurable": true,</span><br><span class="line">      "enumerable": true,</span><br><span class="line">      "value": "zhu",</span><br><span class="line">      "writable": true</span><br><span class="line">    &#125;</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><code>Object.keys</code>、<code>for...in</code>、<code>JSON.stringify</code>、<code>Object.assign</code>会忽略<code>enumerable:false</code>的属性,<code>for...in</code>会返回继承的属性</li>
+<li>ES6规定，所有Class的原型的方法都是不可枚举的</li>
+</ol>
+<h2 id="u5C5E_u6027_u7684_u904D_u5386"><a href="#u5C5E_u6027_u7684_u904D_u5386" class="headerlink" title="属性的遍历"></a>属性的遍历</h2><ol>
+<li><code>for...in</code><br>遍历对象自身和<code>继承</code>的可枚举属性，不包含<code>Symbol</code>属性</li>
+<li><code>Object.keys(obj)</code><br>返回一个数组，包含对象自身的所有可枚举属性，不包含<code>继承</code>和<code>Symbol</code>属性</li>
+<li><code>Object.getOwnPropertyNames(obj)</code><br>返回一个数组，包含对象自身的所有属性，不包含<code>Symbol</code>属性，包含<code>不可枚举属性</code></li>
+<li><code>Object.getOwnPropertySymbols(obj)</code><br>返回一个数组，包含对象自身的所有<code>Symbol</code>属性</li>
+<li><code>Reflect.ownKeys(obj)</code><br>返回一个数组，包含对象<code>自身的所有属性</code>，不管是属性名是Symbol或字符串，也不管是否可枚举。</li>
+</ol>
+<p>以上的5种方法遍历对象的属性，都遵守同样的属性遍历的次序规则。</p>
+<pre><code>- 首先遍历所有属性名为`数值`的属性，按照`数字排序`。
+- 其次遍历所有属性名为`字符串`的属性，按照`生成时间排序`。
+- 最后遍历所有属性名为`Symbol值`的属性，按照`生成时间排序`
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Reflect</span>.ownKeys(&#123;</span><br><span class="line">    [<span class="built_in">Symbol</span>()]:<span class="number">0</span>,</span><br><span class="line">    b:<span class="number">0</span>,</span><br><span class="line">    <span class="number">10</span>:<span class="number">0</span>,</span><br><span class="line">    <span class="number">2</span>:<span class="number">0</span>,</span><br><span class="line">    a:<span class="number">0</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">/*</span><br><span class="line">    Array [</span><br><span class="line">      "2",</span><br><span class="line">      "10",</span><br><span class="line">      "b",</span><br><span class="line">      "a",</span><br><span class="line">      Symbol()</span><br><span class="line">    ]</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="proto_u5C5E_u6027_uFF0CObject-setPrototypeOf_28_29_uFF0CObject-getPrototypeOf_28_29"><a href="#proto_u5C5E_u6027_uFF0CObject-setPrototypeOf_28_29_uFF0CObject-getPrototypeOf_28_29" class="headerlink" title="proto属性，Object.setPrototypeOf()，Object.getPrototypeOf()"></a><strong>proto</strong>属性，Object.setPrototypeOf()，Object.getPrototypeOf()</h2><p><strong>proto</strong>:用来读取或设置当前对象的prototype对象。最好用<code>Object.setPrototypeOf()</code>，<code>Object.getPrototypeOf()</code>,<code>Object.ceate()</code>代替</p>
+<p>Object.setPrototypeOf():设置一个对象的<code>prototype</code>对象<br><code>Object.setPrototypeOf(object,prototype)</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> proto = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;x:<span class="number">10</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.setPrototypeOf(obj,proto);</span><br><span class="line">proto.y = <span class="string">'zhu'</span>;</span><br><span class="line">proto.z = <span class="string">'wang'</span>;</span><br><span class="line"></span><br><span class="line">obj.y;  <span class="comment">//'zhu'</span></span><br><span class="line">obj.z;  <span class="comment">//'wang'</span></span><br></pre></td></tr></table></figure></p>
+<p><code>Object.getPrototypeOf(obj)</code>:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Rec</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> rec = <span class="keyword">new</span> Rec();</span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(rec); <span class="comment">//Rec &#123;&#125;</span></span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(rec) === Rec.prototype; <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Object-keys_28_29_uFF0CObject-values_28_29_uFF0CObject-entries_28_29"><a href="#Object-keys_28_29_uFF0CObject-values_28_29_uFF0CObject-entries_28_29" class="headerlink" title="Object.keys()，Object.values()，Object.entries()"></a>Object.keys()，Object.values()，Object.entries()</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; foo: <span class="string">'bar'</span>, baz: <span class="number">42</span> &#125;;</span><br><span class="line"><span class="built_in">Object</span>.keys(obj);<span class="comment">//["foo", "baz"]</span></span><br><span class="line"><span class="built_in">Object</span>.values(obj); <span class="comment">//['bar',42]</span></span><br><span class="line"><span class="built_in">Object</span>.entries(obj); <span class="comment">//[ ["foo", "bar"], ["baz", 42] ]</span></span><br><span class="line"><span class="built_in">Object</span>.values(<span class="string">'obj'</span>);<span class="comment">//['o','b','j']</span></span><br></pre></td></tr></table></figure>
+<h2 id="u5BF9_u8C61_u7684_u6269_u5C55_u8FD0_u7B97_u7B26"><a href="#u5BF9_u8C61_u7684_u6269_u5C55_u8FD0_u7B97_u7B26" class="headerlink" title="对象的扩展运算符"></a>对象的扩展运算符</h2><ol>
+<li><p>解构赋值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;x,y,...z&#125; = &#123;x:<span class="number">1</span>,y:<span class="number">2</span>,a:<span class="number">3</span>,d:<span class="number">4</span>&#125;;</span><br><span class="line">z;<span class="comment">//&#123;a:3,d:4&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>结构赋值必须是最后一个参数</li>
+<li>解构赋值是浅拷贝</li>
+<li>不会拷贝继承自原型对象的属性<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o1 = &#123;a:<span class="number">1</span>&#125;,</span><br><span class="line">    o2 = &#123;b:<span class="number">2</span>&#125;;</span><br><span class="line">    <span class="built_in">Object</span>.setPrototypeOf(o2,o1);</span><br><span class="line">    <span class="keyword">let</span> o3 = &#123;...o2&#125;;</span><br><span class="line">    o3;<span class="comment">//&#123;b:2&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> o = <span class="built_in">Object</span>.create(&#123;x:<span class="number">1</span>,y:<span class="number">2</span>&#125;);</span><br><span class="line">    o.z = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">let</span> &#123;x,...&#123;y,z&#125;&#125; = o;</span><br><span class="line">    x;</span><br><span class="line">    y;</span><br><span class="line">    z;      <span class="comment">//Binding invalid left-hand side in rest property (4:12)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>扩展运算符<code>...</code>用于取出参数对象的所有可遍历属性，拷贝到当前对象之中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> z = &#123;...a&#125;; <span class="comment">//&#123;'a':1,'b':2&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果扩展运算符的参数是<code>null</code>或<code>undefined</code>，这个两个值会被忽略，不会报错。</p>
+<h2 id="Object-getOwnPropertyDescriptors"><a href="#Object-getOwnPropertyDescriptors" class="headerlink" title="Object.getOwnPropertyDescriptors"></a>Object.getOwnPropertyDescriptors</h2><p>返回指定对象的所有自身属性（非继承）的描述对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">const</span> z = &#123;</span><br><span class="line">        name:<span class="string">'zhu'</span>,</span><br><span class="line">        get bar()&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'abc'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Object</span>.getOwnPropertyDescriptors(z);</span><br><span class="line">    <span class="comment">/*</span><br><span class="line">        Object &#123;</span><br><span class="line">    "bar": Object &#123;</span><br><span class="line">    "configurable": true,</span><br><span class="line">    "enumerable": true,</span><br><span class="line">    "get": [Function get bar],</span><br><span class="line">    "set": undefined</span><br><span class="line">  &#125;,</span><br><span class="line">  "name": Object &#123;</span><br><span class="line">    "configurable": true,</span><br><span class="line">    "enumerable": true,</span><br><span class="line">    "value": "zhu",</span><br><span class="line">    "writable": true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">    */</span></span><br></pre></td></tr></table></figure></p>
+<p>主要解决<code>Object.assign</code>无法拷贝<code>get/set</code>属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">const</span> s1 = &#123;</span><br><span class="line">        set f(v)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(v)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> t1 = &#123;&#125;;</span><br><span class="line">    <span class="built_in">Object</span>.assign(t1,s1);</span><br><span class="line">    <span class="built_in">Object</span>.getOwnPropertyDescriptor(t1,<span class="string">'f'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span><br><span class="line">    Object &#123;</span><br><span class="line">  "configurable": true,</span><br><span class="line">  "enumerable": true,</span><br><span class="line">  "value": undefined,</span><br><span class="line">  "writable": true</span><br><span class="line">&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Object.assign方法总是拷贝一个属性的值，而不会拷贝它背后的赋值方法或取值方法</span></span><br></pre></td></tr></table></figure></p>
+<p><code>Object.getOwnPropertyDescriptors</code>和<code>Object.defineProperties</code>可以解决上述问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">const</span> s1 = &#123;</span><br><span class="line">        set f(v)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(v)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> t1 = &#123;&#125;;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperties(t1,<span class="built_in">Object</span>.getOwnPropertyDescriptors(s1));</span><br><span class="line">    <span class="built_in">Object</span>.getOwnPropertyDescriptor(t1,<span class="string">'f'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span><br><span class="line">        Object &#123;</span><br><span class="line">  "configurable": true,</span><br><span class="line">  "enumerable": true,</span><br><span class="line">  "get": undefined,</span><br><span class="line">  "set": [Function set f]</span><br><span class="line">&#125;</span><br><span class="line">    */</span></span><br></pre></td></tr></table></figure></p>
+<p><code>Object.getOwnPropertyDescriptors</code>方法可以实现一个对象继承另一个对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="keyword">const</span> obj = <span class="built_in">Object</span>.create(prot);</span><br><span class="line">obj.f = <span class="string">'zhu'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="keyword">const</span> obj = <span class="built_in">Object</span>.create(</span><br><span class="line">        prot,</span><br><span class="line">        <span class="built_in">Object</span>.getOwnPropertyDescriptors(&#123;</span><br><span class="line">            f:zhu</span><br><span class="line">            &#125;)</span><br><span class="line">    )</span><br></pre></td></tr></table></figure></p>
+
+      
+
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/09/es6之对象的扩展/">es6之对象的扩展</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 弦冰 的个人博客">弦冰</a></p>
+        <p><span>发布时间:</span>2017年02月09日 - 13时03分</p>
+        <p><span>最后更新:</span>2017年02月09日 - 16时30分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/09/es6之对象的扩展/" title="es6之对象的扩展">http://baidu.com/2017/02/09/es6之对象的扩展/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://baidu.com/2017/02/09/es6之对象的扩展/　　作者: 弦冰" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/08/es6之函数的扩展下/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">es6之函数的扩展下</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5C5E_u6027_u540D_u8868_u8FBE_u5F0F"><span class="toc-number">1.</span> <span class="toc-text">属性名表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u65B9_u6CD5_u7684name_u5C5E_u6027"><span class="toc-number">2.</span> <span class="toc-text">方法的name属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-is"><span class="toc-number">3.</span> <span class="toc-text">Object.is</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-assign"><span class="toc-number">4.</span> <span class="toc-text">Object.assign</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5C5E_u6027_u7684_u53EF_u679A_u4E3E_u6027"><span class="toc-number">5.</span> <span class="toc-text">属性的可枚举性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5C5E_u6027_u7684_u904D_u5386"><span class="toc-number">6.</span> <span class="toc-text">属性的遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proto_u5C5E_u6027_uFF0CObject-setPrototypeOf_28_29_uFF0CObject-getPrototypeOf_28_29"><span class="toc-number">7.</span> <span class="toc-text">proto属性，Object.setPrototypeOf()，Object.getPrototypeOf()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-keys_28_29_uFF0CObject-values_28_29_uFF0CObject-entries_28_29"><span class="toc-number">8.</span> <span class="toc-text">Object.keys()，Object.values()，Object.entries()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5BF9_u8C61_u7684_u6269_u5C55_u8FD0_u7B97_u7B26"><span class="toc-number">9.</span> <span class="toc-text">对象的扩展运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-getOwnPropertyDescriptors"><span class="toc-number">10.</span> <span class="toc-text">Object.getOwnPropertyDescriptors</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2017/02/09/es6之对象的扩展/" data-title="es6之对象的扩展" data-url="http://baidu.com/2017/02/09/es6之对象的扩展/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"luums"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/02/08/es6之函数的扩展下/" title="下一篇: es6之函数的扩展下">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/09/es6之对象的扩展/">es6之对象的扩展</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/es6之函数的扩展下/">es6之函数的扩展下</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/es6之函数的扩展上/">es6之函数的扩展上</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/07/es6之数组的扩展/">es6之数组的扩展</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/es6之数值的扩展/">es6之数值的扩展</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/05/ees6之正则的扩展/">ees6之正则的扩展</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/leetCode之two-sum/">leetCode之two sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/es6之字符串的扩展/">es6之字符串的扩展</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/03/es6之变量的解构赋值/">es6之变量的解构赋值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/Vue-router2-0设置页面title/">Vue-router2.0.0设置页面title</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/css3之box-decoration-breakk/">css3之box-decoration-breakk</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/16/Object-prototype-toString/">Object.prototype.toString</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/条纹背景/">条纹背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/09/BOM/">BOM</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/08/边框内圆角/">边框内圆角</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/灵活的背景定位/">灵活的背景定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/05/多重边框/">多重边框</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/04/半透明边框/">半透明边框</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/27/图片上传加预览/">图片上传加预览</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/07/面向对象的程序设计/">面向对象的程序设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/状态模式/">状态模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/引用类型/">引用类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/初识php/">初识php</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/命令模式/">命令模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/webpack笔记/">webpack笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/javascript问题收集(1)/">javascript问题收集(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/js闭包的经典例子/">js闭包的经典例子</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/git-踩坑的一些总结/">git 踩坑的一些总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/angular之$resource/">angular之resource</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/移动端事件/">移动端事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/唠唠jQ里的on/">唠唠jQ里的on</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式（下）/">策略模式（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/策略模式/">策略模式(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/毛玻璃/">毛玻璃</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/单例模式/">单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/续谈闭包/">续谈闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/31/闭包/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/call-AND-apply/">call AND apply</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/浅谈tjavascript里的this/">浅谈javascript里的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/css3-折角效果/">css3 折角效果</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div>
+                &copy; 2017 弦冰
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 21;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a id='toTop'><i class="fa fa-arrow-up"></i></a>
+<!-- <a href="#comments"><i class="fa fa-comments-o"></i></a>-->
+    <a id='toButtom' ><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+document.addEventListener('visibilitychange',function(){
+    document.title = document.hidden ? '客官再玩玩嘛' :'客官你好帅'
+});
+
+    $(document).ready(function() {
+       /* if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        }; */
+
+        $(document).scroll(function(){
+        if($(document).scrollTop() >319){
+        	$('#scroll').fadeIn()
+        }else{
+        	$('#scroll').fadeOut()
+        }
+        })
+
+        $('#toTop').click(function(){
+        $('html,body').animate({scrollTop:'0px'},400)
+        })
+
+        $('#toButtom').click(function(){
+        $('html,body').animate({scrollTop:($(document).height() - $(window).height())+'px'},400)
+        })
+
+
+
+
+
+    }) 
+
+
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+  </div>
+</body>
+</html>
